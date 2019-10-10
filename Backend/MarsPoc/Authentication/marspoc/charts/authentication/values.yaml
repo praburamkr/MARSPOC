@@ -1,0 +1,11 @@
+# UI controll
+title: "Welcome to MARS POC"
+name: marspoc
+
+# Service controlls
+serviceName: authentication
+serviceType: ClusterIP
+
+#acr
+acr: marsacr.azurecr.io
+version: latest

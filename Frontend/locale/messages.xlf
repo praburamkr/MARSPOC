@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="appointmentBookingHeader" datatype="html">
+        <source>Appointment Booking</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/appointment/book-appointment/book-appointment.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="description"> Appointment Booking Header</note>
+        <note priority="1" from="meaning">AppointmentBookingHeader </note>
+      </trans-unit>
+      <trans-unit id="appointmentType" datatype="html">
+        <source>Appointment Type</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/appointment/book-appointment/book-appointment.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <note priority="1" from="description">Appointment Type </note>
+        <note priority="1" from="meaning">AppointmentType</note>
+      </trans-unit>
+      <trans-unit id="timeSlot" datatype="html">
+        <source>Time Slot</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/appointment/book-appointment/book-appointment.component.html</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+        <note priority="1" from="description">Time Slot </note>
+        <note priority="1" from="meaning">TimeSlot</note>
+      </trans-unit>
+      <trans-unit id="findAtTime" datatype="html">
+        <source>Find a time</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/appointment/book-appointment/book-appointment.component.html</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+        <note priority="1" from="description">Find A Time </note>
+        <note priority="1" from="meaning">FindATime</note>
+      </trans-unit>
+      <trans-unit id="eb8aa94335816422eb0179472183fbfe6d885bad" datatype="html">
+        <source>Note for Doctor</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/appointment/book-appointment/book-appointment.component.html</context>
+          <context context-type="linenumber">120</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="addAppointment" datatype="html">
+        <source>+ Add Appointment</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/appointment/book-appointment/book-appointment.component.html</context>
+          <context context-type="linenumber">126</context>
+        </context-group>
+        <note priority="1" from="description">Add Appointment </note>
+        <note priority="1" from="meaning">AddAppointment</note>
+      </trans-unit>
+      <trans-unit id="phone" datatype="html">
+        <source>Phone</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/client/client-info/client-info.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <note priority="1" from="description">Phone </note>
+        <note priority="1" from="meaning">Phone</note>
+      </trans-unit>
+      <trans-unit id="address" datatype="html">
+        <source>Address</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/client/client-info/client-info.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <note priority="1" from="description">Address </note>
+        <note priority="1" from="meaning">Address</note>
+      </trans-unit>
+      <trans-unit id="9ce0ec245fe9adcdcb7ab758dccb1b762a3723c7" datatype="html">
+        <source>Search Doctors</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/scheduler/filter/filter.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="70b2f58c805e47de6ccd424a9c3c4dd5f7d1269c" datatype="html">
+        <source>Search client</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/scheduler/filter/filter.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="newAppointment" datatype="html">
+        <source>+ New Appointment</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/scheduler/filter/filter.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <note priority="1" from="description">New Appointment </note>
+        <note priority="1" from="meaning">NewAppointment</note>
+      </trans-unit>
+      <trans-unit id="welcomeHeader" datatype="html">
+        <source>Welcome to Voyager</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/auth/login/login.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <note priority="1" from="description">Welcome Header</note>
+        <note priority="1" from="meaning">WelcomeHeader</note>
+      </trans-unit>
+      <trans-unit id="email" datatype="html">
+        <source>Email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/auth/login/login.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="description">Email </note>
+        <note priority="1" from="meaning">Email</note>
+      </trans-unit>
+      <trans-unit id="69b6ac577a19acc39fc0c22342092f327fff2529" datatype="html">
+        <source>Email address</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/auth/login/login.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="password" datatype="html">
+        <source>Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/auth/login/login.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="description">Password </note>
+        <note priority="1" from="meaning">Password</note>
+      </trans-unit>
+      <trans-unit id="c32ef07f8803a223a83ed17024b38e8d82292407" datatype="html">
+        <source>Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/auth/login/login.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="rememberMe" datatype="html">
+        <source>Remember me</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/auth/login/login.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <note priority="1" from="description">Remember Me </note>
+        <note priority="1" from="meaning">RememberMe</note>
+      </trans-unit>
+      <trans-unit id="forgotPassword" datatype="html">
+        <source>Forgot password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/auth/login/login.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">Forgot Password </note>
+        <note priority="1" from="meaning">ForgotPassword</note>
+      </trans-unit>
+      <trans-unit id="logIn" datatype="html">
+        <source>Log in </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/auth/login/login.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description">Log In </note>
+        <note priority="1" from="meaning">LogIn</note>
+      </trans-unit>
+      <trans-unit id="edit" datatype="html">
+        <source>Edit</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/client/pet-details/pet-details.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">Edit </note>
+        <note priority="1" from="meaning">Edit</note>
+      </trans-unit>
+      <trans-unit id="age" datatype="html">
+        <source>
+                        Age
+                    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/client/pet-details/pet-details.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <note priority="1" from="description">Age </note>
+        <note priority="1" from="meaning">Age</note>
+      </trans-unit>
+      <trans-unit id="weight" datatype="html">
+        <source>
+                        Weight
+                    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/client/pet-details/pet-details.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <note priority="1" from="description">Weight </note>
+        <note priority="1" from="meaning">Weight</note>
+      </trans-unit>
+      <trans-unit id="species" datatype="html">
+        <source>
+                        Species
+                    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/client/pet-details/pet-details.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+        <note priority="1" from="description">Species </note>
+        <note priority="1" from="meaning">Species</note>
+      </trans-unit>
+      <trans-unit id="breed" datatype="html">
+        <source>
+                        Breed
+                    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/client/pet-details/pet-details.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <note priority="1" from="description">Breed </note>
+        <note priority="1" from="meaning">Breed</note>
+      </trans-unit>
+      <trans-unit id="sex" datatype="html">
+        <source>
+                        Sex
+                    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/client/pet-details/pet-details.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+        <note priority="1" from="description">Sex </note>
+        <note priority="1" from="meaning">Sex</note>
+      </trans-unit>
+      <trans-unit id="addNewPatient" datatype="html">
+        <source> + Add
+    New Patient</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/client/pet-details/pet-details.component.html</context>
+          <context context-type="linenumber">89</context>
+        </context-group>
+        <note priority="1" from="description">Add New Patient </note>
+        <note priority="1" from="meaning">AddNewPatient</note>
+      </trans-unit>
+      <trans-unit id="newPatient" datatype="html">
+        <source>New Patient</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/client/add-pet/add-pet.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description">New Patient </note>
+        <note priority="1" from="meaning">NewPatient</note>
+      </trans-unit>
+      <trans-unit id="newName" datatype="html">
+        <source>Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/client/add-pet/add-pet.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">New Name </note>
+        <note priority="1" from="meaning">NewName</note>
+      </trans-unit>
+      <trans-unit id="newSpecies" datatype="html">
+        <source>Species</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/client/add-pet/add-pet.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">New Species </note>
+        <note priority="1" from="meaning">NewSpecies</note>
+      </trans-unit>
+      <trans-unit id="newColor" datatype="html">
+        <source>Color</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/client/add-pet/add-pet.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="description">New Color </note>
+        <note priority="1" from="meaning">NewColor</note>
+      </trans-unit>
+      <trans-unit id="newBreed" datatype="html">
+        <source>Breed</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/client/add-pet/add-pet.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <note priority="1" from="description">New Breed </note>
+        <note priority="1" from="meaning">NewBreed</note>
+      </trans-unit>
+      <trans-unit id="newAge" datatype="html">
+        <source>Age</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/client/add-pet/add-pet.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <note priority="1" from="description">New Age </note>
+        <note priority="1" from="meaning">NewAge</note>
+      </trans-unit>
+      <trans-unit id="newWeight" datatype="html">
+        <source>Weight</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/client/add-pet/add-pet.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <note priority="1" from="description">New Weight </note>
+        <note priority="1" from="meaning">NewWeight</note>
+      </trans-unit>
+      <trans-unit id="newSex" datatype="html">
+        <source>Sex</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/client/add-pet/add-pet.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <note priority="1" from="description">New Sex </note>
+        <note priority="1" from="meaning">NewSex</note>
+      </trans-unit>
+      <trans-unit id="male" datatype="html">
+        <source>Male</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/client/add-pet/add-pet.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <note priority="1" from="description">Male </note>
+        <note priority="1" from="meaning">Male</note>
+      </trans-unit>
+      <trans-unit id="female" datatype="html">
+        <source>Female</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/client/add-pet/add-pet.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+        <note priority="1" from="description">Female </note>
+        <note priority="1" from="meaning">Female</note>
+      </trans-unit>
+      <trans-unit id="save" datatype="html">
+        <source>Save</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/client/add-pet/add-pet.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+        <note priority="1" from="description">Save </note>
+        <note priority="1" from="meaning">Save</note>
+      </trans-unit>
+      <trans-unit id="cancel" datatype="html">
+        <source>Cancel</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/client/add-pet/add-pet.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+        <note priority="1" from="description">Cancel </note>
+        <note priority="1" from="meaning">Cancel</note>
+      </trans-unit>
+      <trans-unit id="cTimeSlot" datatype="html">
+        <source>Time Slot</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/appointment/confirm-appointment/confirm-appointment.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <note priority="1" from="description">C Time Slot </note>
+        <note priority="1" from="meaning">CTimeSlot</note>
+      </trans-unit>
+      <trans-unit id="notes" datatype="html">
+        <source>Notes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/appointment/confirm-appointment/confirm-appointment.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <note priority="1" from="description">Notes </note>
+        <note priority="1" from="meaning">Notes</note>
+      </trans-unit>
+      <trans-unit id="confirmEmail" datatype="html">
+        <source>send confirmation email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/appointment/confirm-appointment/confirm-appointment.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+        <note priority="1" from="description">Confirm Email </note>
+        <note priority="1" from="meaning">ConfirmEmail</note>
+      </trans-unit>
+      <trans-unit id="sendEmailTo" datatype="html">
+        <source>Send email to</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/appointment/confirm-appointment/confirm-appointment.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <note priority="1" from="description">Send Email To </note>
+        <note priority="1" from="meaning">SendEmailTo</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

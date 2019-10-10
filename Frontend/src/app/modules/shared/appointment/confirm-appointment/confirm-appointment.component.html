@@ -1,0 +1,49 @@
+<!-- <div *ngIf="!($misc | async)?.showConfirm">
+    <div *ngFor="let newAppointment of newAppointments">
+    <div class="app-type0">{{getAppointmentType(newAppointment?.appt_type_id)?.appt_type_text}} Appointment</div>
+    <div class="app-type">{{getAppointmentSubType(newAppointment?.appt_sub_type_id)?.appt_sub_type_text}} - 30 mins</div>
+    <div class="reasons">{{getReason(newAppointment?.reason_code_id)?.reason_text}}</div>
+    <div class="time-slot">Time Slot</div>
+    <div class="time-slot-option">
+        <div class="time-slot-option1">
+            <b>{{docName}}</b>
+        </div>
+        <div class="time-slot-option2">
+            {{slotName}}
+        </div>
+    </div>
+    <div class="time-slot">Notes</div>
+    <div class="time-slot-option2">{{newAppointment?.note_for_doctor}}</div>
+    <hr />
+    </div> -->
+<div *ngIf="showChild">
+    <div *ngFor="let newAppointment of newAppointments">
+        <div class="app-type0">{{getAppointmentType(newAppointment?.appt_type_id)?.appt_type_text}} Appointment</div>
+        <div class="app-type"><img src="../../../../../assets/icons/icon-sub-type.png" height="20px" width="20px"/>{{getAppointmentSubType(newAppointment?.appt_sub_type_id)?.appt_type_text}} - 30 mins
+        </div>
+        <div class="reasons">{{getReason(newAppointment?.reason_code_id)?.reason_text}}</div>
+        <div class="time-slot" i18n="CTimeSlot|C Time Slot @@cTimeSlot">Time Slot</div>
+        <div class="time-slot-option">
+            <div class="time-slot-option1" [innerHTML]="docName"></div>
+            <div class="time-slot-option2">
+                {{slotName}}
+            </div>
+        </div>
+        <div class="time-slot" i18n="Notes|Notes @@notes">Notes</div>
+        <div class="time-slot-option2">{{newAppointment?.note_for_doctor}}</div>
+        <hr />
+    </div>
+    <label class="switch">
+        <input type="checkbox" checked>
+        <span class="slider round"></span>
+    </label>
+    <span class="email-conf" i18n="ConfirmEmail|Confirm Email @@confirmEmail">send confirmation email</span>
+    <div class="email" i18n="SendEmailTo|Send Email To @@sendEmailTo">Send email to</div>
+    <input type="email" />
+    <div><br /></div>
+</div>
+<div class="pet-header fixedButton">
+    <button id="confirm-app-btn" (click)="saveAppointment()"
+        [innerHTML]="newAppointments.length>1?'Confirm '+newAppointments.length+' Appointments':'Confirm '+newAppointments?.length+' Appointment'">
+    </button>
+</div>

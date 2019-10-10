@@ -1,0 +1,40 @@
+{
+  "client_id": 1,
+  "client_name": "Maria Hernandez",
+  "clientImage": "assets/images/maria.png",
+  "phone": "(818) 384-4119, (213) 418-1010",
+  "email": "maria.hernandez@microsoft.com",
+  "address": "1470 Norman Street Sussex WI 53089",
+  "patients": [
+    {
+      "patient_id": 1,
+      "patient_name": "Bruno",
+      "color_pattern": "red,brown,black",
+      "birth_date": "",
+      "age": "10 Yrs.",
+      "weight": "80 lbs",
+      "weight_uom": "",
+      "species_id": "",
+      "pref_doctor_id": "",
+      "species_name": "Dog",
+      "breed": "German Shepherd",
+      "sex": "Male",
+      "photo": "assets/images/armegeddon.jpg"
+    },
+    {
+      "patient_id": 1,
+      "patient_name": "Pumpkin",
+      "color_pattern": "grey,brown,black",
+      "birth_date": "",
+      "age": "1 Yrs.",
+      "weight": "6 lbs",
+      "weight_uom": "",
+      "species_id": "",
+      "pref_doctor_id": "",
+      "species_name": "Cat",
+      "breed": "Persian",
+      "sex": "Male",
+      "photo": "assets/images/pumpkin.jpg"
+    }
+  ]
+}

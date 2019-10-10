@@ -1,0 +1,43 @@
+<!-- <div style="top:20px;right:0px;border:1px solid green;">
+        <app-appointment-slider *ngIf="showClientSidebar"></app-appointment-slider>
+</div> -->
+<div class="container phone-call-plugin" id="screen1">
+    <div class="top">
+        <div class="picture upper">
+            <img id="displayPic" src="{{clientInfo['img_url']}}" alt="display picture">
+        </div>
+        <div class="name">
+            <div id="name" class="clientName">{{clientInfo['client_name']}}</div>
+            <div id="phno" class="phoneNumber">{{clientInfo['phone']}}</div>
+        </div>
+        <div class="verticle-line"></div>
+
+        <div class="call">
+            <a href="#"><img src="../../../assets/icons/incoming.png"></a>
+            <div class="circle-ripple"></div>
+        </div>
+    </div>
+    <div class="bottom">
+        <div>
+            <a href="javascript:void(0);"><img src="../../../assets/images/Group.png"
+                    (click)="clickAcceptPhoneCall()"></a>
+        </div>
+        <div>
+            <a href=""><img src="../../../assets/images/Group%202.png"></a>
+        </div>
+        <div>
+            <a href=""><img src="../../../assets/images/usage.png"></a>
+        </div>
+        <div>
+            <a href=""><img src="../../../assets/images/Information.png"></a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<br><br>

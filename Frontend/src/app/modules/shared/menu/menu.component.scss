@@ -1,0 +1,44 @@
+.menu{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 60px;
+  z-index: 2000;
+  background: #0078f0;
+  a.logo{
+    padding: 35px 10px 0;
+    text-decoration: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    border: 2px solid #0078F0;
+  }
+  ul{
+    list-style: none;
+    padding: 0;
+   
+    li{
+      padding: 15px 20px;
+      cursor: pointer;
+      &:nth-last-child(-n+1){
+        position: absolute;
+        bottom: 58px;
+        width: 100%;
+      }
+      &:hover,&.active{
+        background: #59ABFD;
+      }
+    }
+  }
+}
+
+.menu {
+  li:first-child{
+    padding: 10px 12px!important;
+  }
+}
+.user {
+  border-radius: 50%;
+}

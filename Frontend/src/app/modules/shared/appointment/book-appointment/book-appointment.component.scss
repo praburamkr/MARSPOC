@@ -1,0 +1,215 @@
+*{
+    font-size: 14px;
+}
+.pet-appoint{
+    margin-top: 170px;
+    height: 608px;
+    width: 100%;
+    // position: fixed;
+    // left: 1300px;
+    // top: 240px;
+    // border: 1px solid #CCCCCC;
+}
+.pet-header{
+    width: 100%;
+    height: 56px;   
+    // border-bottom: 2px solid #CCCCCC;
+    background-color: #FFFFFF;
+    border-width: 1px 0px;
+    border-style: solid;
+    border-color: #CCCCCC;
+    // border: 1px solid #CCCCCC;
+}
+.pet-image{
+    width: 38px;
+    height: 38px;
+    margin: 8px 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    float: left;
+    clear: right;
+    // background-image: url(../../../../../assets/svg/pet.png);
+    // background-color: azure;
+}
+.pet-name{
+    margin: 19px 0px;
+    float: left;
+    clear: right;
+    font-weight: bold;
+    font-size: 14px !important;
+    line-height: 18px;
+}
+.appointments{
+    margin: 20px 0px;
+    width: 180px;
+    text-align: center;
+    float: left;
+    clear: right;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    color: #32B67A;
+}
+.pet-expand{
+    margin: 20px 10px;
+    cursor: pointer;
+}
+.sch-appoint{
+    width: 100%;
+    height: inherit;
+    // border: 1px solid #CCCCCC;
+    background: #FFFFFF;
+}
+.ap-type{
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    // border: 1px solid #CCCCCC;
+    // margin: 16px 16px 0px 16px;
+    margin: 0px;
+    padding-top: 32px;
+    padding-left: 20px;
+    padding-bottom: 17px;
+    // font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+}
+input[type=radio]{
+    width: 30px;
+    color: #0053CC;
+//     // display      : inline-block;
+//     // margin-left  : -28px;
+//     // padding-left : 28px;
+//     // background   : url('checks.png') no-repeat 0 0;
+//     // line-height  : 24px;
+}
+.time-slot{
+    margin-left: 20px;
+    margin-top: 6px; 
+    // font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    width: 220px;
+    float: left;
+    clear: right;
+}
+.time-slot-option{
+    margin: 12px 20px;
+    border-radius: 8px;
+    border: 1px solid #CCCCCC;
+    padding: 16px 20px;
+    height: 72px;
+    width: 90%;
+    // background-color: #cccccc;
+    // color: #FFFFFF;
+}
+.time-slot-suggest{
+    width: 298px;
+    float: left;
+    clear: right;
+}
+.form-control{
+    margin: 8px 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 1px solid black;
+    display: block;
+    // height: 32px;
+    background: #FFFFFF;
+    border: 1px solid #CECECE;
+    box-sizing: border-box;
+    border-radius: 2px;
+    margin-left: 0px;
+    margin-right: 0px;
+    display: inline;
+}
+.form-group{
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    // border: 1px solid #CCCCCC;
+    margin-left: 20px;
+    // padding: 8px;
+
+}
+.department{
+    width: 141px;
+}
+.app-type-drop{
+    width: 210px;
+}
+.reasons{
+    width: 350px;
+}
+textarea.form-control{
+    resize: none;
+    margin: 16px 20px 16px 20px;
+    border-radius: 8px;
+    border: 1px solid #CCCCCC;
+    padding: 16px 20px;
+    height: 88px;
+    width: 89.5%;
+
+}
+button{
+    background-color: #fff;
+    height: 30px;
+    border: #fff;
+    color: blue;
+    font-size: 13px;
+}
+button#find-time-btn{
+    padding: 0px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    width: 130px;
+    text-align: right;
+}
+button#add-app-btn{
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    height: 100%;
+}
+button#confirm-app-btn{
+    width: 100%;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 23px;
+    text-align: center;
+    background: #0078F0;
+    color: #FFFFFF;
+    padding: 20px;
+    height: 100%;
+}
+.selected-reason{
+    background: #F4FAFF;
+    border: 1px solid #0078F0;
+    box-sizing: border-box;
+    border-radius: 25px;
+    padding: 5px 15px;
+}
+.footer{
+    height: 32px;
+    background-color: #F7F7F7;
+}
+.reverse{
+    color: #ffffff;
+}
+.fixedButton{
+    position: fixed !important;
+    bottom: 0px;
+    right: 0px;
+    width: 399px;
+}
+.hiddenButtonSpace{
+    height: 54px;
+    padding: 3px 12px;
+    display: inline-block;
+    margin: 3px;
+}

@@ -1,0 +1,1449 @@
+@import '../../../../styles.scss';
+
+.menuHeader {
+  position: fixed;
+  top: 0;
+  width:100%;
+// width: calc(100% - 115px);
+
+  left: 0;
+//   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  z-index: 1010; 
+  height: 54px;
+  padding: 10px 120px 0 0;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+.align-right {
+  float: right;
+  padding-right: 25px;
+}
+
+.margin-right {
+    margin-right: 10px;
+}
+
+.control-left {
+    width: calc(100% - 185px);
+    float: left;
+}
+
+.pull-right {
+    width: auto;
+    float: right;
+}
+
+.new-appointment {
+    position: fixed;
+    right: 15px;
+    top: 10px;
+}
+
+select,input {
+  height: 30px;
+  width: 215px;
+  margin-right: 20px;
+  border: 1px solid #CECECE;
+  padding: 5px 15px;
+  font-size: 12px;
+  border-radius: 2px;
+}
+
+button {
+  background-color: #0078f0;
+  color: $white;
+  border: none;
+  border-radius: 20px;
+  padding: 9px 25px;
+  font-size: 13px;
+}
+
+.dropdown-control {
+    background: #FFFFFF;
+    border: 1px solid #CECECE;
+    box-sizing: border-box;
+    border-radius: 2px;
+    padding: 3px 0;
+    width: 20%;
+    float: left;
+    margin-right: 10px;
+}
+
+.date-type-dropdown-control {
+    background: #FFFFFF;
+    border: 1px solid #CECECE;
+    box-sizing: border-box;
+    border-radius: 2px;
+    padding: 3px 0;
+    width: 100px;
+    float: left;
+    margin-right: 10px;
+}
+
+.department-type-dropdown-control, .appointment-type-dropdown-control, .reasons-dropdown-control {
+    background: #FFFFFF;
+    border: 1px solid #CECECE;
+    box-sizing: border-box;
+    border-radius: 2px;
+    padding: 3px 0;
+    float: left;
+    // margin-right: 10px;
+}
+
+.padding-top-reset {
+    padding-top: 0!important;
+}
+
+.padding-bottom-reset {
+    padding-bottom: 0!important;
+}
+
+
+.department-type-dropdown-control {
+    width: 40%;
+    margin-right: 10px;
+}
+
+.appointment-type-dropdown-control {
+    width: calc(60% - 10px);
+    float: right;
+}
+
+.reasons-dropdown-control {
+    width: 100%;
+    border: 1px solid #CECECE;
+}
+
+.date-dropdown-control {
+     background: #FFFFFF;
+    border: 1px solid #CECECE;
+    box-sizing: border-box;
+    border-radius: 2px;
+    padding: 3px 0 1px 0;
+    width: 20%;
+    float: left;
+    margin-right: 10px;
+    height: 34px;
+}
+
+.e-input-group .e-input-group-icon, .e-input-group.e-control-wrapper .e-input-group-icon {
+  margin-right: 0!important;
+}
+
+.e-multi-select-wrapper .e-chips-close.e-close-hooker {
+  display: none;
+}
+
+.multi-dropdown-control {
+    background: #FFFFFF;
+    border: 1px solid #CECECE;
+    box-sizing: border-box;
+    border-radius: 2px;
+    padding: 2px 0 0 0;
+    width: 20%;
+     font-size: 13px;
+    float: left;
+    margin-right: 10px;
+}
+.e-input-group:not(.e-float-icon-left):not(.e-float-input)::before, .e-input-group:not(.e-float-icon-left):not(.e-float-input)::after, .e-input-group.e-float-icon-left:not(.e-float-input) .e-input-in-wrap::before, .e-input-group.e-float-icon-left:not(.e-float-input) .e-input-in-wrap::after, .e-input-group.e-control-wrapper:not(.e-float-icon-left):not(.e-float-input)::before, .e-input-group.e-control-wrapper:not(.e-float-icon-left):not(.e-float-input)::after, .e-input-group.e-control-wrapper.e-float-icon-left:not(.e-float-input) .e-input-in-wrap::before, .e-input-group.e-control-wrapper.e-float-icon-left:not(.e-float-input) .e-input-in-wrap::after {
+    background:none !important;
+}
+
+.e-input-group, .e-input-group.e-control-wrapper {
+    margin-bottom: 0!important;
+}
+
+.e-input-group:not(.e-float-icon-left), .e-input-group.e-control-wrapper:not(.e-float-icon-left) {
+    border-bottom: 0!important;
+}
+
+.e-ddl.e-input-group .e-ddl-hidden {
+    display: none;
+}
+
+.search .e-ddl .e-search-icon::before {
+    content: '\e993'!important;
+}
+
+.e-ddl.e-input-group.e-control-wrapper .e-ddl-icon::before, .e-multiselect.e-input-group .e-ddl-icon::before {
+    content: '\e36a';
+    font-family: 'e-icons';
+}
+
+.search .e-ddl.e-control-wrapper.e-icon-anim .e-ddl-icon::before {
+    transform: rotate(0deg)!important;
+    transition: transform 300ms ease;
+}
+
+.e-input-group input.e-input, .e-float-input.e-input-group input, .e-input-group.e-control-wrapper input.e-input, .e-float-input.e-input-group.e-control-wrapper input, .e-float-input input, .e-float-input.e-control-wrapper input {
+    min-height: auto!important;
+}
+
+.e-date-wrapper span.e-input-group-icon.e-date-icon.e-icons.e-active {
+  color: #0053CC!important;
+}
+
+.e-clear-icon {
+    display: none!important;
+}
+
+.switch-tab {
+    background: #E7E7E7!important;
+    width: 32%;
+    height: 34px;
+    float: left;
+    padding: 10px;
+    border-radius: 0 4px 4px 0;
+    img {
+        width: 16px;
+    }
+}
+
+.align-left {
+    width: 100px;
+    float: left;
+    margin-left: 72px;
+    border-radius: 4px;
+}
+
+.switch-active {
+    width: 68%!important;
+    border-radius: 4px 0 0 4px;
+    background: #0078F0!important;
+    img {
+        margin-top: -2px;
+    }
+}
+
+.e-multiselect.e-checkbox .e-multi-select-wrapper, .e-multiselect .e-multi-select-wrapper.e-down-icon, .e-control-wrapper {
+    padding: 0 10px!important;
+}
+
+.e-checkbox-wrapper .e-frame.e-check, .e-css.e-checkbox-wrapper .e-frame.e-check {
+    background-color: #0078F0!important;
+    border-color: transparent;
+    color: #fff;
+}
+
+.e-dropdownbase .e-list-item.e-item-focus {
+    background-color: #F4FAFF!important;
+}
+
+.e-popup.e-multi-select-list-wrapper .e-list-item {
+    border-top: 0!important;
+    border-left: 0!important;
+    border-right: 0!important;
+    border-bottom: 0.5px solid #CECECE!important;
+    height: 32px!important;
+}
+
+.bg-green {
+    background: #0E9C4F;
+}
+
+.bg-blue {
+    background: #0078F0;
+}
+
+.new-appointment-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    color: #fff;
+    height: 55px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    width: 400px;
+    right: 0;
+    z-index: 10;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+    .name {
+         padding: 0;
+          font-size: 14px;
+          font-weight: 400;
+    }
+}
+
+.search-client-header {
+    width: 100%;
+    float: left;
+    margin-bottom: 10px;
+    margin-top: 54px;
+}
+
+.new-appointment-contents {
+    width: 100%;
+    float: left;
+    padding: 20px;
+    font-size: 14px;
+}
+
+.search-box-container {
+     width: 100%;
+    float: left;
+    padding: 15px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+    .text-input-control {
+        width: 100%;
+        padding: 5px 30px 5px 10px;
+    }
+
+    .search-icon {
+        position: absolute;
+        right: 45px;
+        top: 128px;
+    }
+
+    .search-input-container, .search-result-container, .search-list-row, .search-list-container, .search-result-container  {
+        width: 100%;
+        float: left;
+    }
+
+    .search-list-row {
+        padding: 3px 0 0 0;
+    }
+
+    .search-list-container {
+        font-size: 12px;
+        width: 100%;
+        float: left;
+        height: auto;
+        max-height: calc(100vh - 185px);
+        overflow: auto;
+        overflow-x: hidden;
+    }
+
+    .search-result-container {
+        width: 100%;
+        float: left;
+        // padding: 10px 0;
+            padding: 5px 0;
+        border-top: 1px solid #C8CCD1!important;
+
+        .client-image {
+            width: 30px;
+            height: 30px;
+            float: left;
+            img {
+                width: 26px;
+                height: 26px;
+                border-radius: 50%;
+                margin: 18px 5px;
+            }
+        }
+
+        .client-data {
+            width: calc(100% - 40px);
+            float: right;
+        }
+    }
+
+     .search-result-container:hover {
+        background: #F5F5F5;
+        cursor: pointer;
+     }
+
+     .patient-counter {
+         width: auto;
+         float: left;
+         padding-right: 5px;
+     }
+
+     .client-patient {
+         width: auto;
+         float: left;
+         padding: 0 5px;
+         border-left: 1px solid #09202F;
+     }
+    
+}
+
+
+
+.radio-button-container ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+	overflow: hidden;
+}
+
+.radio-button-container {
+    ul li {
+        width: auto;
+        margin-right: 15px;
+    }
+}
+
+ul li{
+  color: #AAAAAA;
+  display: block;
+  position: relative;
+  float: left;
+  width: 100%;
+  height: auto;
+}
+
+ul li input[type=radio]{
+  position: absolute;
+  visibility: hidden;
+}
+
+ul li label{
+  display: block;
+  position: relative;
+  font-weight: 300;
+  font-size: 12px;
+  padding: 1px 0 25px 25px;
+  height: auto;
+  z-index: 9;
+  cursor: pointer;
+  -webkit-transition: all 0.25s linear;
+  color: #333333;
+}
+
+ul li:hover label{
+	// color: #FFFFFF;
+}
+
+ul li .check{
+  display: block;
+  position: absolute;
+  border: 1px solid #AAAAAA;
+  border-radius: 100%;
+  height: 20px;
+  width: 20px;
+  top: 0;
+  left: 0;
+	z-index: 5;
+	transition: border .25s linear;
+	-webkit-transition: border .25s linear;
+}
+
+ul li:hover .check {
+//   border: 5px solid #FFFFFF;
+}
+
+ul li .check::before {
+  display: block;
+  position: absolute;
+	content: '';
+  border-radius: 100%;
+  height: 12px;
+  width: 12px;
+  top: 3px;
+	left: 3px;
+  margin: auto;
+	transition: background 0.25s linear;
+	-webkit-transition: background 0.25s linear;
+}
+
+input[type=radio]:checked ~ .check {
+  border: 1px solid #0053CC;
+}
+
+input[type=radio]:checked ~ .check::before{
+  background: #0053CC;
+}
+
+input[type=radio]:checked ~ label{
+  color: #0053CC;
+}
+
+.helper {
+    padding: 5px 30px 5px 10px!important;
+}
+
+.helper-text {
+    color: #CCCCCC;
+    width: auto;
+    position: absolute;
+    margin-left: 125px;
+    margin-top: 2px;
+}
+
+.appointment-patient-row {
+    width: 100%;
+    float: left;
+    padding: 10px 15px;
+}
+
+.patient-image {
+    width: 40px;
+    height: 40px;
+    float: left;
+    background: #F7F7F7;
+    border-radius: 50%;
+}
+
+.patient-name {
+    font-weight: 500;
+    width: auto;
+    float: left;
+    padding: 10px 15px;
+}
+
+.timeslot {
+    font-weight: 500;
+    width: auto;
+    float: left;
+    padding: 10px 0;
+}
+
+.bold-row {
+    font-weight: 500;
+    width: 100%;
+    float: left;
+    padding: 10px 0;
+}
+
+.email-input-control {
+    background: #FFFFFF;
+    border: 1px solid #CECECE;
+    box-sizing: border-box;
+    border-radius: 2px;
+    padding: 3px 10px;
+    width: 100%;
+    float: left;
+    height: 34px;
+}
+
+.medical-appointment-right {
+     width: auto;
+    float: left;
+    margin-left: 15px;
+}
+
+.find-a-time {
+    font-weight: 500;
+    width: auto;
+    float: right;
+    padding: 10px 0;
+    color: #0053CC;
+    cursor: pointer;
+}
+
+.link-color {
+    color: #0053CC;
+    cursor: pointer;
+}
+
+.timeslot-container {
+    width: 100%;
+    float: left;
+    padding: 10px;
+    color: #CCCCCC;
+    border: 1px solid #CECECE;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 400;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
+    strong {
+        font-weight: 500;
+        font-size: 14px;
+    }
+}
+
+.appointment-notes {
+     width: 100%;
+    float: left;
+     border-radius: 4px;
+    border: 1px solid #CECECE;
+    font-size: 12px;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+.appointment-number {
+    width: auto;
+    float: left;
+    padding: 10px 30px;
+    color: #32B67A;
+}
+
+.border {
+    border: 1px solid #ccc;
+    border-left: 0!important;
+    border-right: 0!important;
+}
+
+.bg-white {
+    background: #fff;
+}
+
+.appointment-type-container {
+    width: 100%;
+    float: left;
+    height: 20px;
+}
+
+.header-text {
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+    height: 54px;
+    float: left;
+    padding: 15px 0;
+}
+
+.appointment-type-text  {
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    float: left;
+    padding: 12px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.appointment-notes::-webkit-input-placeholder { /* Edge */
+  font-size: 12px;
+  color: #CCCCCC;
+//   padding: 5px 10px;
+}
+
+.appointment-notes:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  font-size: 12px;
+  color: #CCCCCC;
+//   padding: 5px 10px;
+}
+
+.appointment-notes::placeholder {
+  font-size: 12px;
+  color: #CCCCCC;
+//   padding: 5px 10px;
+}
+
+.margin-top-add-appointment {
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+.margin-top-add-appointment:last-child {
+    margin-bottom: 0;
+}
+
+.margin-bottom {
+    padding-bottom: 20px;
+}
+
+.text-bold {
+    font-weight: 500;
+}
+
+.go-back {
+    width: 60px;
+    height: auto;
+    text-align: center;
+    padding: 15px 0;
+    cursor: pointer;
+    position: absolute;
+    img {
+        margin-top: 5px;
+    }
+}
+
+.appointment-booking-container {
+    width: 100%;
+    float: left;
+    font-size: 14px;
+    margin-top: 54px;
+    margin-bottom: 108px;
+}
+
+.book-appointment-button-container, .confirm-appointment-button-container {
+    width: 400px;
+    float: left;
+    /* padding: 15px; */
+    background: #0078F0;
+    color: #fff;
+    font-size: 18px;
+    /* position: fixed; */
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    height: 54px;
+    border: 0!important;
+    border-radius: 0;
+    position: fixed;
+}
+
+.medical-appointment {
+    width: 100%;
+    float: left;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 42px !important;
+    height: 17px;
+    margin-top: 15px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.4s;
+    border: 1px solid #ccc;
+    height: 17px;
+    left: -2px;
+    top: -1px;
+    background: #ccc;
+    
+}
+
+.slider:before {
+position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    bottom: 0px;
+    background-color: #2196F3;
+    transition: 0.4s;
+    top: -3px;
+    left: -2px;
+}
+
+input:checked + .slider {
+      background-color: #fff;
+    border: 1px solid #0078F0;
+} 
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+  
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.email-confirmation-email {
+    width: auto;
+    float: left;
+    padding: 7px 15px;
+    margin-top: 7px;
+}
+
+.pull-left {
+    width: auto;
+    float: left;
+}
+
+.margin-email-setter {
+    padding-top: 10px;
+}
+
+.common-row {
+    width: 100%;
+    float: left;
+}
+
+.border-top-2 {
+    border-top: 2px solid #D4DBE1;
+}
+
+.patient-container {
+    width: 100%;
+    float: left;
+    padding: 0 15px 15px 15px;
+}
+.patient-row-container {
+     width: 100%;
+    float: left;
+    padding: 0;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.patient-details-header {
+    padding: 10px 15px;
+    border-bottom: 2px solid #f7f7f7;
+    font-size: 14px;
+    .pet-name {
+        font-weight: 500;
+        color: #000;
+        font-size: 14px!important;
+    }
+    .link-color {
+        margin-top: 2px;
+    }
+}
+
+.pet-details {
+    width: 100%;
+    float: left;
+    padding: 10px 15px;
+        font-size: 12px;
+        color: #666;
+}
+
+        .pet-details-left {
+            width: 60%;
+            float: left;
+        }
+
+        
+.pet-details-row {
+    width: 100%;
+    float: left;
+    font-size: 12px;
+    color: #333;
+
+    margin-bottom: 5px;
+     .head {
+            font-weight: 500;
+            width: 88px;
+            float: left;
+        }
+  
+}
+
+      .pet-image-right{
+            float: right;
+            width: 120px;
+            height: 120px;
+
+            img{
+                margin: 10px 0 0 0;
+                border: 1px solid #ccc;
+                overflow: hidden;
+                border-radius: 50%;
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+.details {
+    width: calc(100% - 88px);
+    float: left;
+}
+
+    .square {
+      width: 15px;
+      height: 15px;
+      content: " ";
+      margin: 2px 5px 0 0;
+      border-radius: 50%;
+      display: inline-block;
+      border: 1px solid #ccc;
+    }
+
+    .patient-actions-buttons {
+    width: 100%;
+    float: left;
+    border-top: 2px solid #f7f7f7;
+}
+
+.action-button {
+    text-decoration:none;
+  position:relative;
+    width: 20%;
+    float: left;
+    text-align: center;
+    padding: 10px;
+    img {
+        margin-top: 2px;
+    }
+}
+
+.action-button:hover {
+    background: #f7f7f7;
+    cursor: pointer;
+}
+
+.client-information {
+  display: block;
+  width: 100%;
+  float: left;
+  padding: 10px;
+  margin-top: 54px;
+}
+
+.client-row {
+  width: 100%;
+  float: left;
+  font-size: 12px;
+}
+
+.head-content {
+  width: 100px;
+  padding: 5px 20px;
+  float: left;
+  font-weight: 500;
+}
+
+.head-details {
+  width: calc(100% - 100px);
+  float: left;
+  padding: 5px 10px;
+}
+
+.patient-image {
+    .pet-image {
+        width: 38px;
+        height: 38px!important;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+    }
+}
+
+.appointment-image {
+    width: 40px;
+    height: 40px!important;
+    border-radius: 50%;
+    float: left;
+    // border: 1px solid #ccc;
+    img {
+        padding-top: 12px;
+        display: block;
+        margin: auto;
+    }
+}
+
+.picture{
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    margin-right: 10px;
+    /* margin-top: 7px; */
+    background: rgba(0, 0, 0, 0.12);
+    img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        margin: 6px;
+    }
+}
+
+$border-color: #d4dbe1;
+$background-color: #fff;
+$color-default:#333333;
+$shadow2: 0px 2px 4px rgba(0, 0, 0, 0.2);
+$color-blue:#0053CC;
+$font-header:14px;
+$font-default:12px;
+h3,h4,h5{
+    margin: 0;
+}
+.card{
+    background: $background-color;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: $shadow2;
+}
+.pet-details-container,.add-pet-container {
+    width: 100%;
+    margin:auto;
+    color: $color-default;
+    .pet-details-header{
+        padding: 10px 15px;
+        border-bottom: 2px solid #f7f7f7;
+        h5{
+            float: left;
+            font-size: $font-header;
+            text-transform: capitalize;
+        }
+        .btn-edit{
+            float: right;
+            border: none;
+            background: transparent;
+            color: $color-blue;
+            font-size: $font-header;
+        }
+    }
+    .pet-details{
+        padding: 10px 15px;
+        font-size: 12px;
+        line-height: 2;
+        .form-group{
+            width: 47.5%;
+            float: left;
+            &:nth-of-type(odd){
+                margin-right: 5%;
+            }
+            input{
+                width: 100%;
+                padding: 8px;
+            }
+            label{
+                font-weight: 500;
+            }
+            &.form-inline{
+                width: 100%;
+                input{
+                    width: auto;
+                    margin: 0 5px 0 0;
+                }
+                label{
+                    display: inline-block;
+                    margin: 0 15px 0 0;
+                }
+                span{
+                    margin: 0 15px 0 0;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+
+    .add-pet-action{
+        float: right;
+        clear: both;
+        button{
+            width: 100px;
+            font-size: 14px;
+            padding: 8px 10px;
+            border-radius: 20px;
+            border:none;
+            height: 32px;
+        }
+        .btn-blue{
+            color: #fff;
+            background:  #0078F0;
+        }
+        .btn-secondary{
+            color: #0078F0;
+            background:  #fff;
+            border:1px solid #0078F0;
+            margin-left: 10px;
+        }
+    }
+
+}
+
+.last-row {
+    height: 50px;
+}
+
+.pet-details-row {
+    width: 100%;
+    float: left;
+    margin-bottom: 5px;
+    .left {
+        width: calc(50% - 8px);
+        float: left;
+        margin-right: 8px;
+        .head {
+            font-weight: 500;
+        }
+    }
+    .right {
+        width: calc(50% - 7px);
+        float: left;
+        margin-left: 7px;
+        .head {
+            font-weight: 500;
+        }
+    }
+}
+
+.text-input-control {
+    background: #FFFFFF;
+    border: 1px solid #CECECE;
+    box-sizing: border-box;
+    border-radius: 2px;
+    padding: 5px 10px;
+    width: 100%;
+    font-size: 13px;
+    float: left;
+    margin-right: 10px;
+}
+
+
+.radio-button-container ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+	overflow: hidden;
+}
+
+.radio-button-container {
+    ul li {
+        width: auto;
+        margin-right: 15px;
+    }
+}
+
+ul li{
+  color: #AAAAAA;
+  display: block;
+  position: relative;
+  float: left;
+  width: 100%;
+  height: auto;
+}
+
+ul li input[type=radio]{
+  position: absolute;
+  visibility: hidden;
+}
+
+ul li label{
+  display: block;
+  position: relative;
+  font-weight: 300;
+  font-size: 12px;
+  padding: 1px 0 25px 25px;
+  height: auto;
+  z-index: 9;
+  cursor: pointer;
+  -webkit-transition: all 0.25s linear;
+  color: #333333;
+}
+
+ul li:hover label{
+	// color: #FFFFFF;
+}
+
+ul li .check{
+  display: block;
+  position: absolute;
+  border: 1px solid #AAAAAA;
+  border-radius: 100%;
+  height: 20px;
+  width: 20px;
+  top: 0;
+  left: 0;
+	z-index: 5;
+	transition: border .25s linear;
+	-webkit-transition: border .25s linear;
+}
+
+ul li:hover .check {
+//   border: 5px solid #FFFFFF;
+}
+
+ul li .check::before {
+  display: block;
+  position: absolute;
+	content: '';
+  border-radius: 100%;
+  height: 12px;
+  width: 12px;
+  top: 3px;
+	left: 3px;
+  margin: auto;
+	transition: background 0.25s linear;
+	-webkit-transition: background 0.25s linear;
+}
+
+input[type=radio]:checked ~ .check {
+  border: 1px solid #0053CC;
+}
+
+input[type=radio]:checked ~ .check::before{
+  background: #0053CC;
+}
+
+input[type=radio]:checked ~ label{
+  color: #0053CC;
+}
+
+.helper {
+    padding: 5px 30px 5px 10px!important;
+}
+
+.helper-text {
+    color: #CCCCCC;
+    width: auto;
+    position: absolute;
+    margin-left: 125px;
+    margin-top: 28px;
+}
+
+.radio-button-container {
+        width: 100%;
+    float: left;
+    overflow: hidden;
+}
+
+.add-new-patient {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 0;
+    float: left;
+    width: 100%;
+}
+
+.btn-minimize, .btn-maximize {
+    top: 5px;
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 101;
+    position: fixed;
+    img {
+        padding: 10px;
+        margin-top: 10px;
+    }
+}
+
+.btn-minimize {
+    right: 50px;
+}
+
+.btn-maximize {
+    right: 50px;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.select-control {
+    background: #FFFFFF;
+    border: 1px solid #CECECE;
+    box-sizing: border-box;
+    border-radius: 2px;
+    padding: 3px 6px;
+    width: 100%;
+    float: left;
+}
+
+.appointment-type-control {
+    width: 200px!important;
+    float: right;
+
+    .appointment-type-control-arrow {
+        position: relative;
+        margin-top: -20px;
+        margin-left: 175px;
+    }
+
+    // select {
+    //     width: calc(100% - 24px);
+    // }
+}
+
+.reasons-control {
+    width: 100%!important;
+    float: right;
+
+    .reasons-arrow {
+        position: relative;
+        margin-top: -20px;
+        margin-left: 328px;
+    }
+}
+
+.department-control {
+     width: 140px!important;
+    float: left;
+
+    .department-arrow {
+        position: relative;
+        margin-top: -20px;
+        margin-left: 118px;
+    }
+}
+
+select {
+  border: 1px solid #CECECE;
+  border-radius: 4px;
+  display: inline-block;
+   padding: 3px 10px;
+   height: 34px;
+
+  /* reset */
+
+  margin: 0;      
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+}
+
+.selected-appointment-type-display {
+    width: 22px;
+    height: 22px;
+    float: left;
+    border-radius: 4px;
+    background: #fff;
+    margin-top: 6px;
+    margin-right: 2px;
+    position: absolute;
+    right: 45px;
+    z-index: 1;
+}
+
+.chip {
+    font-size: 12px;
+    width: auto;
+    float: left;
+    border-radius: 25px;
+    margin-top: 10px;
+    background: #F4FAFF;
+    color: #333;
+}
+
+
+.selectdiv {
+  position: relative;
+  float: left;
+  width: 100%;
+  label {
+      width: 100%;
+      margin-bottom: 0;
+  }
+}
+
+/* IE11 hide native button (thanks Matt!) */
+select::-ms-expand {
+display: none;
+}
+
+.selectdiv:after {
+//   content: '<>';
+content: "\e36a";
+font-family: "e-icons";
+    right: 10px;
+    top: 10px;
+    padding: 0 0 2px;
+    /* border-bottom: 1px solid #999; */
+    position: absolute;
+    pointer-events: none;
+    font-size: 10px;
+    color: #777;
+}
+
+.selectdiv select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    float: right;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    -ms-word-break: normal;
+    word-break: normal;
+}
+
+button:disabled,
+button[disabled]{
+  background-color: #C8CCD1;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.client-email-address-container {
+    width: 100%;
+    float: left;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: #C8CCD1;
+}
+
+.confirmed-window-bg {
+    // display: none;
+    position: fixed;
+    z-index: 2001;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #ccc;
+    opacity: 0.5;
+}
+
+
+.confirmed-window {
+    width: 300px;
+    float: left;
+    padding: 15px;
+    background: #f7f7f7;
+    top: 25px;
+    z-index: 2002;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    font-size: 16px;
+    position: fixed;
+    left: 50%;
+    margin-left: -150px;
+    text-align: center;
+    border-radius: 0 0 8px 8px;
+    border-top: 5px solid #0E9C4F;
+}
+
+.confirm-popup-button-container {
+    width: 100%;
+    float: left;
+    padding: 10px 55px;
+    button {
+        font-size: 16px!important;
+        width: 100%;
+    }
+}
+
+.confirmed-icon {
+    width: 100%;
+    float: left;
+    margin: 15px 0;
+}
+
+.confirmed-text {
+    width: 100%;
+    float: left;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.expand-section {
+    transform: rotate(270deg);
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin-top: 3px;
+}
+
+.collapse-section {
+    transform: rotate(90deg);
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin-top: 15px;
+    margin-right: 10px;
+}

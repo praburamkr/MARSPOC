@@ -1,0 +1,142 @@
+@import "~@angular/material/theming";
+@include mat-core();
+///// Color Variables //////
+
+
+$light-primary-text: rgba(74, 74, 74, 1);
+$light-secondary-text: rgba(210, 210, 210, 1);
+$light-disabled-text: rgba(white, 0.5);
+$light-dividers: rgba(white, 0.12);
+$light-focused: rgba(#d4d4d4, 0.12);
+
+
+//////// Custom Palette ///////
+
+
+$my-custom-primary-color: (50 : #a9e3fd,
+100 : #5fcbfb,
+200 : #28b9f9,
+300 : #0695d5,
+400 : #0580b7,
+500 : #046b99,
+600 : #03567b,
+700 : #02415d,
+800 : #022c40,
+900 : #011822,
+A100 : #9de1ff,
+A200 : #37c1ff,
+A400 : #0090d0,
+A700 : #007eb6,
+contrast: (50 : #000000,
+100 : #000000,
+200 : #000000,
+300 : #ffffff,
+400 : #ffffff,
+500 : #ffffff,
+600 : #ffffff,
+700 : #ffffff,
+800 : #ffffff,
+900 : #ffffff,
+A100 : #000000,
+A200 : #000000,
+A400 : #ffffff,
+A700 : #ffffff,
+));
+
+/// Light Blue Primary////
+$my-custom-primary-color1: (100: #7499c0,
+A100: #ffffff,
+contrast: (100: #ffffff,
+A100: #ffffff));
+
+////////  Accent ///////
+
+$my-custom-accent-color: (50 : #ffffff,
+100 : #ffffff,
+200 : #f9d9db,
+300 : #f09b9f,
+400 : #ec8186,
+500 : #e8666c,
+600 : #e44b52,
+700 : #e03139,
+800 : #d32028,
+900 : #b81c23,
+A100 : #ffffff,
+A200 : #ffe8e9,
+A400 : #f8898e,
+A700 : #ef787e,
+contrast: (50 : #000000,
+100 : #000000,
+200 : #000000,
+300 : #000000,
+400 : #000000,
+500 : #000000,
+600 : #ffffff,
+700 : #ffffff,
+800 : #ffffff,
+900 : #ffffff,
+A100 : #ffffff,
+A200 : #000000,
+A400 : #000000,
+A700 : #000000, ));
+
+/*****/
+
+$guide-primary: mat-palette($my-custom-primary-color, 500, 200, A900);
+$guide-accent: mat-palette($my-custom-accent-color, 500, 900, A100);
+$guide-warn: mat-palette($my-custom-accent-color, 500, 900, A100);
+$guide-theme: mat-light-theme($guide-primary, $guide-accent, $guide-warn);
+
+
+// Foreground palette for light themes.
+
+
+$mat-light-theme-foreground: (base: black,
+divider: $dark-dividers,
+dividers: $dark-dividers,
+disabled: $dark-disabled-text,
+disabled-button: rgba(black, 0.26),
+disabled-text: $dark-disabled-text,
+elevation: black,
+hint-text: $dark-disabled-text,
+secondary-text: $dark-secondary-text,
+icon: rgba(black, 0.54),
+icons: rgba(black, 0.54),
+text: rgba(red, 0.87),
+slider-min: rgba(black, 0.87),
+slider-off: rgba(black, 0.26),
+slider-off-active: rgba(black, 0.38));
+
+
+@include angular-material-theme($guide-theme);
+
+.lightblue-theme {
+  $lightblue-primary: mat-palette($my-custom-primary-color1, 100);
+  $lightblue-accent: mat-palette($mat-yellow, 400);
+  $lightblue-theme: mat-light-theme($lightblue-primary, $lightblue-accent);
+  @include angular-material-theme($lightblue-theme);
+}
+
+
+////////  Typography configuration ///////
+
+$vca-typography: mat-typography-config($font-family: 'Roboto, "Helvetica Neue", sans-serif',
+$display-4: mat-typography-level(112px, 112px, 300),
+$display-3: mat-typography-level(56px, 56px, 400),
+$display-2: mat-typography-level(45px, 48px, 400),
+$display-1: mat-typography-level(34px, 40px, 400),
+$headline: mat-typography-level(32px, 32px, 200),
+$title: mat-typography-level(20px, 32px, 500),
+$subheading-2: mat-typography-level(16px, 28px, 400),
+$subheading-1: mat-typography-level(15px, 24px, 400),
+$body-2: mat-typography-level(14px, 24px, 500),
+$body-1: mat-typography-level(14px, 20px, 400),
+$caption: mat-typography-level(12px, 20px, 400),
+$button: mat-typography-level(14px, 14px, 500),
+// Line-height must be unit-less fraction of the font-size.
+$input: mat-typography-level(16px, 1.125, 400),
+
+);
+
+
+@include mat-toolbar-typography($vca-typography);

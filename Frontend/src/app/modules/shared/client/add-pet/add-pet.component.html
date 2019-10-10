@@ -1,0 +1,93 @@
+<form #addPatientForm="ngForm" (ngSubmit)="addPatient()" class="form form-register">
+    <div class="add-pet-container">
+        <div class="row pet card">
+            <div class="pet-details-header">
+                <div class="pet-name">New Patient </div>
+            </div>
+            <div class="pet-details">
+
+                <div class="pet-details-row">
+                    <div class="left">
+                        <div class="head"> Name </div>
+                        <div class="control"> <input class="text-input-control" type="text" name="patient_name"
+                                ngModel /> </div>
+                    </div>
+
+                    <div class="right">
+                        <div class="head"> Species </div>
+                        <div class="control"> <input class="text-input-control" name="species_name" type="text"
+                                ngModel /> </div>
+                    </div>
+                </div>
+
+                <div class="pet-details-row">
+                    <div class="left">
+                        <div class="head"> Color </div>
+                        <div class="control"> <input class="text-input-control" type="text" name="color_pattern"
+                                ngModel /> </div>
+                    </div>
+
+                    <div class="right">
+                        <div class="head"> Breed </div>
+                        <div class="control"> <input class="text-input-control" name="breed" type="text" ngModel />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pet-details-row">
+                    <div class="left">
+                        <div class="head"> Age </div>
+                        <div class="control"> <input class="text-input-control helper" type="text" name="age" ngModel />
+                            <div class="helper-text">Yrs</div>
+                        </div>
+                    </div>
+
+                    <div class="right">
+                        <div class="head"> Weight </div>
+                        <div class="control"> <input class="text-input-control helper" name="weight" type="text"
+                                ngModel />
+                            <div class="helper-text">Lbs</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pet-details-row last-row">
+                    <div class="left">
+                        <div class="head"> Sex </div>
+                        <div class="control">
+                            <div class="radio-button-container">
+
+                                <ul>
+                                    <li>
+                                        <input type="radio" id="f-option" name="gender" value="male" ngModel>
+                                        <label for="f-option">Male</label>
+                                        <div class="check"></div>
+                                    </li>
+
+                                    <li>
+                                        <input type="radio" id="s-option" name="gender" value="female" ngModel>
+                                        <label for="s-option">Female</label>
+                                        <div class="check">
+                                            <div class="inside"></div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="add-pet-action">
+                    <button class="btn-blue" name="" type="submit">Save</button>
+                    <button class="btn-secondary" name="" type="button" (click)="closeAddPet()">Cancel</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>

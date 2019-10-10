@@ -1,0 +1,18 @@
+<div class="login-container-wrap">
+  <div class="login-container">
+    <img class="logo" src="../../../../assets/images/voyager-login.jpg" alt="voyager" />
+    <h2 i18n="WelcomeHeader|Welcome Header@@welcomeHeader">Welcome to Voyager</h2>
+    <!-- <p i18n="WelcomeDesc|Welcome Desc@@welcomeDesc">Here comes the intro text to help CSR get familiarise with the VOYAGER Program and it’s purpose.</p> -->
+    <form [formGroup]="loginForm">
+      <label i18n="Email|Email @@email">Email</label>
+      <input type="text" formControlName="username" name="username" id="username" placeholder="Email address" i18n-placeholder
+        [ngClass]="{'error':( showAllErrors || loginForm?.controls?.username?.touched) && loginForm?.controls?.username?.errors}" />
+      <label i18n="Password|Password @@password">Password</label>
+      <input type="password" formControlName="password" name="password" id="password" placeholder="Password" i18n-placeholder
+        [ngClass]="{'error': (showAllErrors || loginForm?.controls?.password?.touched) && loginForm?.controls?.password?.errors}" />
+        <input type="checkbox" /><label class="label-checkbox" i18n="RememberMe|Remember Me @@rememberMe">Remember me</label>
+        <a href="#" i18n="ForgotPassword|Forgot Password @@forgotPassword">Forgot password</a>
+      <button type="submit" (click)="canLogin()" i18n="LogIn|Log In @@logIn">Log in </button>
+    </form>
+  </div>
+</div>

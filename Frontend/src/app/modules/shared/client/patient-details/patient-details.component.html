@@ -1,0 +1,20 @@
+<div class="patient-details-container"> <!---- component patient-details-container ----->
+    <div class="patient-tab-details">
+        <ul>
+            <li (click)="onSave($event,patient.id)" *ngFor="let patient of clientPatients"><a id="a-{{patient.id}}"
+                [class.patient-tab-selected]="patient.id=='patient100'" class="patient-tab-selected" href="#{{ patient.client_id }}">{{ patient.client_name }}</a></li>
+        </ul>
+    </div>
+    <div class="patient-tab-details-container">
+        <div class="patient-tab-description">
+            Details 1
+        </div>
+        <!------
+        <div class="patient-tab-details2">
+            Details 2
+        </div>
+       
+        <pateint-deytail ></pateint-deytail>   
+         --------------->
+    </div>
+</div>

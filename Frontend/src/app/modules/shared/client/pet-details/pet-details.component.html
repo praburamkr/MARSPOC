@@ -1,0 +1,109 @@
+<div *ngIf="!showAddAppointment" id="pet-details-container" class="pet-details-container">
+    <div class="row pet card" *ngFor="let pet of pets">
+
+        <div class="pet-details-header">
+            <div class="pet-name">{{pet?.patient_name}}</div>
+            <button class="btn-secondary-blue btn-edit">Edit</button>
+        </div>
+
+        <div class="pet-details">
+            <div class="pet-details-left">
+
+                <div class="pet-details-row">
+                    <div class="head">
+                        Color
+                    </div>
+                    <div class="details">
+                        <div class="square" [style.background-color]="color"
+                            *ngFor="let color of pet?.color_pattern.split(',')">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pet-details-row">
+                    <div class="head" i18n="Age|Age @@age">
+                        Age
+                    </div>
+                    <div class="details">
+                        {{pet?.age}} Yrs.
+                    </div>
+                </div>
+
+                <div class="pet-details-row">
+                    <div class="head" i18n="Weight|Weight @@weight">
+                        Weight
+                    </div>
+                    <div class="details">
+                        {{pet?.weight}} lbs
+                    </div>
+                </div>
+
+                <div class="pet-details-row">
+                    <div class="head" i18n="Species|Species @@species">
+                        Species
+                    </div>
+                    <div class="details">
+                        {{pet?.species_name}}
+                    </div>
+                </div>
+
+                <div class="pet-details-row">
+                    <div class="head" i18n="Breed|Breed @@breed">
+                        Breed
+                    </div>
+                    <div class="details">
+                        {{pet?.breed}}
+                    </div>
+                </div>
+
+                <div class="pet-details-row">
+                    <div class="head" i18n="Sex|Sex @@sex">
+                        Sex
+                    </div>
+                    <div class="details">
+                        {{pet?.sex | titlecase}}
+                    </div>
+                </div>
+
+            </div>
+            <div class="pet-image-right">
+                <!-- <img src={{pet.img_url}} class="pet-image" /> -->
+
+                <img [src]="pet?.img_url==null || pet?.img_url==''?'../../../../../assets/images/default.png' : pet?.img_url"
+                    class="pet-image" />
+
+            </div>
+        </div>
+
+        <div class="patient-actions-buttons">
+
+
+            <div class="action-button book-an-appointment" (click)="addAppointment(pet)" title="Book Appointment(s)">
+                <img src="../../../../../assets/icons/icon-appointment.png" alt="" />
+            </div>
+
+            <div class="action-button call-doctor" title="Book a Call with Doctor"><img
+                    src="../../../../../assets/icons/icon-call-plus.png" alt="" />
+            </div>
+            <div class="action-button" title="Favourite"><img src="../../../../../assets/icons/icon-heart-gray.png"
+                    alt="" />
+            </div>
+            <div class="action-button" title="Cart"><img src="../../../../../assets/icons/icon-cart.png" alt="" /></div>
+            <div class="action-button" title="more"><img src="../../../../../assets/icons/icon-menu-list.png" alt="" />
+            </div>
+        </div>
+
+    </div>
+    <div *ngIf="isNewPet">
+        <app-add-pet (onAddPatient)="addPatientDetails($event)" (onClose)="close($event)"></app-add-pet>
+    </div>
+</div>
+<div *ngIf="showAddAppointment" class="pet-details-container-collapse"></div>
+
+
+
+<button *ngIf="!showAddAppointment && newPatient" id="add-section"
+    class="btn-secondary-blue btn-edit btn-center add-section" (click)="addPatient()">
+    + Add New Patient</button>
+<app-book-appointment (onPrevious)="showAddAppointment=!showAddAppointment" [patient]="selectedPet"
+    *ngIf="showAddAppointment"></app-book-appointment>

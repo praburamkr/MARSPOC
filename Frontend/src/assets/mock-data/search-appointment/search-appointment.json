@@ -1,0 +1,21 @@
+[
+  {
+    "appointment_id": 0,
+    "appt_scan_id": "string",
+    "appt_link_id": 0,
+    "appt_type_id": 0,
+    "appt_sub_type_id": 0,
+    "patient_id": 0,
+    "patient_name": "Armegeddon",
+    "patient_img_url": "assets/images/mridul.jpg",
+    "client_id": 0,
+    "client_name": "mridul",
+    "client_img_url": "assets/images/armegeddon.jpg",
+    "appt_date": "2019/09/20",
+    "appt_start_time": 1569297600000,
+    "appt_end_time": 1569299400000,
+    "doctor_id": 0,
+    "appt_status": 1,
+    "appt_workflow_state": 2
+  }
+]

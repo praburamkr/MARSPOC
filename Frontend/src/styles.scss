@@ -1,0 +1,1409 @@
+@import 'styles/colors';
+@import 'styles/buttons';
+
+/* You can add global styles to this file, and also import other style files */
+/* VCA Color Palette */
+//$vca-blue: #386DA6;
+
+
+/* VCA Typography */
+$roboto : 'Roboto',
+sans-serif;
+$light :300;
+$regular:400;
+$medium:500;
+$bold:700;
+
+/* Variable declarations */
+$primary-font: $roboto;
+$primay-font-color: $dark-grey;
+$primary-color: $vca-blue;
+$secondary-color: $dark-grey;
+$disabled-color: $medium-grey;
+$field-outline-color: $medium-grey;
+$field-outline-color-hover: $medium-grey;
+$field-outline-color-focus:$medium-grey;
+$field-outline-color-mandatory: $orange;
+$error-color: $red;
+$dropdown-panel-outline: $primary-color;
+$dropdown-option-hover: $iceberg;
+$dropdown-option-selected: $light-grey;
+
+
+// Select Variables
+
+$mat-select-arrow-size: 5px !default;
+$mat-select-arrow-margin: 4px !default;
+$mat-select-panel-max-height: 256px !default;
+$mat-select-item-height: 13em !important;
+
+$mat-select-placeholder-arrow-space: 2 * ($mat-select-arrow-size + $mat-select-arrow-margin);
+
+
+//Application Font Size configuration -----------------------
+
+$base-font-size: 16px;
+
+@function px-to-rem ($target, $context: $base-font-size) {
+  @return ($target / $context) * 1rem;
+}
+
+
+// Custom Border Radius
+
+$prefixes: -webkit-,
+-moz-,
+-o-,
+"";
+
+@mixin borderRadius($size...) {
+  @if length($size)==1 {
+    @each $prefix in $prefixes {
+      #{$prefix}border-radius: $size !important;
+    }
+  }
+
+  @else {
+    @include customBorderRadius($size...);
+  }
+}
+
+@mixin customBorderRadius($topLeft: 0, $topRight: 0, $bottomRight: 0, $bottomLeft: 0) {
+  @each $prefix in $prefixes {
+    @if $prefix=="-moz-" {
+      @if $topLeft !=0 {
+        -moz-border-radius-topleft: $topLeft;
+      }
+
+      @if $topRight !=0 {
+        -moz-border-radius-topright: $topRight;
+      }
+
+      @if $bottomRight !=0 {
+        -moz-border-radius-bottomright: $bottomRight;
+      }
+
+      @if $bottomLeft !=0 {
+        -moz-border-radius-bottomleft: $bottomLeft;
+      }
+    }
+
+    @else {
+      @if $topLeft !=0 {
+        #{$prefix}border-top-left-radius: $topLeft;
+      }
+
+      @if $topRight !=0 {
+        #{$prefix}border-top-right-radius: $topRight;
+      }
+
+      @if $bottomRight !=0 {
+        #{$prefix}border-bottom-right-radius: $bottomRight;
+      }
+
+      @if $bottomLeft !=0 {
+        #{$prefix}border-bottom-left-radius: $bottomLeft;
+      }
+    }
+  }
+}
+
+// Margin and Padding Helper
+
+$spaceamounts: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+  11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+  21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+  31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
+  41, 42, 43, 44, 45, 46, 47, 48, 49, 50); // Adjust this to include the pixel amounts you need.
+$sides: (top, bottom, left, right); // Leave this variable alone
+
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .m-#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$space}px !important;
+    }
+
+    .p-#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$space}px !important;
+    }
+  }
+
+  .m-all-#{$space} {
+    margin: #{$space}px !important;
+  }
+
+  .p-all-#{$space} {
+    padding: #{$space}px !important;
+  }
+}
+
+// Text truncation
+//@include truncate(100px)
+
+@mixin truncate($truncation-boundary) {
+  max-width: $truncation-boundary;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Common Style
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: $primary-font;
+  font-size: 16px !important;
+  color: $primay-font-color;
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision;
+}
+
+// Button
+.mat-raised-button,
+.mat-flat-button,
+.mat-stroked-button,
+.mat-button {
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  font-size: px-to-rem(14px);
+  font-weight: $medium;
+  padding: 0 20px !important;
+  min-height: 40px;
+
+
+}
+
+.mat-raised-button.mat-primary[disabled],
+.mat-flat-button[disabled],
+.mat-fab[disabled] {
+  background-color: $medium-grey !important;
+  color: $white !important;
+}
+
+.mat-raised-button:hover {
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.4) !important;
+}
+
+.mat-raised-button.mat-primary[disabled] {
+  background-color: $medium-grey !important;
+  color: $white !important;
+
+  &:hover {
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0) !important;
+  }
+}
+
+.mat-button {
+  color: $primary-color !important;
+
+  &:hover {
+    background-color: rgba($primary-color, .1) !important;
+  }
+
+  .mat-button-focus-overlay {
+    background-color: $primary-color !important;
+  }
+}
+
+.mat-stroked-button {
+  border: 1px solid $primary-color !important;
+}
+
+.mat-stroked-button {
+  &:hover {
+    background-color: rgba($primary-color, .1) !important;
+  }
+}
+
+.mat-stroked-button[disabled] {
+  border: 1px solid $medium-grey !important;
+  color: $medium-grey !important;
+
+  &:hover {
+    background-color: rgba($primary-color, .0) !important;
+  }
+}
+
+.mat-button-focus-overlay {
+  background-color: transparent !important;
+}
+
+// Anchor Link
+
+.link {
+  font-family: $primary-font;
+  font-size: px-to-rem(14px);
+  font-weight: $medium;
+  color: $primary-color;
+  text-decoration: none;
+
+  &:hover {
+    color: rgba($primary-color, .75);
+  }
+}
+
+// Radio Button
+
+.mat-radio-button {
+  .mat-radio-outer-circle {
+    height: 18px;
+    left: 1px;
+    top: 1px;
+    width: 18px;
+    border-width: 1px;
+    background-color: $white;
+    border-color: $medium-grey !important;
+
+  }
+
+  .mat-radio-inner-circle {
+    height: 16px;
+    left: 2px;
+    top: 2px;
+    width: 16px;
+  }
+
+  .mat-radio-disabled .mat-radio-label-content {
+    color: $medium-grey;
+    background-color: $medium-grey;
+  }
+}
+
+// Disabled State
+.mat-radio-button.mat-radio-disabled.mat-radio-checked .mat-radio-outer-circle,
+.mat-radio-button.mat-radio-disabled .mat-radio-outer-circle {
+  border-color: $medium-grey !important;
+  background-color: $medium-grey !important;
+}
+
+.mat-radio-button.mat-radio-disabled .mat-radio-inner-circle {
+  background-color: rgba($primary-color, .38) !important;
+}
+
+// Ripple color
+.mat-radio-button .mat-radio-ripple .mat-ripple-element {
+  background-color: rgba($primary-color, .6) !important;
+}
+
+
+// Check Box
+
+.mat-checkbox-inner-container {
+  width: 18px !important;
+  height: 18px !important;
+  background-color: $white;
+  border-radius: 3px !important;
+}
+
+.mat-checkbox .mat-checkbox-frame {
+  border-color: $medium-grey !important;
+  border-radius: 3px !important;
+  border-width: 1px !important;
+}
+
+.mat-pseudo-checkbox {
+  border-color: $medium-grey !important;
+}
+
+.mat-checkbox-label {
+  color: $primay-font-color;
+  font-size: px-to-rem(14px);
+  font-weight: $regular;
+
+}
+
+.mat-primary {
+  .mat-pseudo-checkbox-checked {
+    background-color: $primary-color;
+  }
+
+  .mat-pseudo-checkbox-indeterminate {
+    background-color: $primary-color;
+  }
+}
+
+.mat-pseudo-checkbox-checked {
+  &::after {
+    height: 4px !important;
+    top: 4px !important;
+    color: $primary-color;
+  }
+}
+
+.mat-checkbox.mat-checkbox-disabled {
+  .mat-checkbox-frame {
+    border-color: $disabled-color !important;
+    background-color: $disabled-color;
+    color: $disabled-color;
+    border-radius: 2px !important;
+  }
+
+  .mat-checkbox-checkmark-path {
+    stroke: rgba($primary-color, 0.38) !important;
+  }
+}
+
+.mat-checkbox-disabled.mat-checkbox-checked {
+  &:not(.mat-checkbox-indeterminate) {
+    .mat-checkbox-background {
+      background-color: $disabled-color !important;
+      border-radius: 2px !important;
+    }
+  }
+}
+
+.mat-checkbox-disabled {
+  .mat-checkbox-label {
+    color: $disabled-color !important;
+  }
+}
+
+.mat-checkbox-indeterminate.mat-primary .mat-checkbox-background,
+.mat-checkbox-checked.mat-primary .mat-checkbox-background {
+  background-color: $white !important;
+  border: 1px solid $medium-grey !important;
+  border-radius: 2px !important;
+}
+
+
+.mat-checkbox .mat-checkbox-checkmark-path {
+  stroke: $primary-color !important;
+}
+
+.mat-checkbox .mat-checkbox-checkmark-path {
+  stroke-width: 3px !important;
+}
+
+// Star Check Box
+
+.star {
+  visibility: hidden;
+  font-size: px-to-rem(20px);
+  cursor: pointer;
+  position: relative;
+  top: -2px;
+  left: 0px;
+
+  &:before {
+    content: "\2606";
+    position: absolute;
+    visibility: visible;
+    color: $background-color;
+  }
+
+  &:checked {
+    &:before {
+      content: "\2605";
+      position: absolute;
+      color: $yellow;
+    }
+  }
+}
+
+// Input
+
+.mat-form-field {
+  font-size: px-to-rem(14px);
+}
+
+.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float {
+  .mat-form-field-outline-gap {
+    border-top-color: currentColor !important;
+  }
+}
+
+.mat-form-field-appearance-outline {
+  .mat-form-field-label {
+    height: inherit;
+    color: $dark-grey;
+  }
+
+  /* Placeholder */
+  .mat-label {
+    color: $dark-grey !important;
+  }
+
+  .mat-form-field-prefix {
+    top: 4px !important;
+    left: -2px !important;
+  }
+
+  .mat-form-field-suffix {
+    top: 1px !important;
+    left: 2px !important;
+  }
+}
+
+.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float {
+  .mat-form-field-label {
+    -webkit-transform: translateY(-0.7em) scale(0.75) !important;
+    transform: translateY(-0.7em) scale(0.75) !important;
+    color: $primary-color;
+  }
+}
+
+.mat-form-field-appearance-outline {
+  .mat-form-field-outline {
+    color: $field-outline-color;
+    background-color: $white;
+    border-radius: 4px;
+  }
+
+  .mat-form-field-outline-thick {
+    color: $field-outline-color-hover !important;
+  }
+
+  &.mat-focused {
+    .mat-form-field-outline-thick {
+      color: $field-outline-color-focus !important;
+
+      .mat-form-field-outline-start,
+      .mat-form-field-outline-end,
+      .mat-form-field-outline-gap {
+        border-width: 1px;
+      }
+    }
+
+    .mat-form-field-required-marker {
+      color: $primary-color;
+    }
+  }
+
+  // Class repeated so that rule is specific enough to override focused accent color case.
+  &.mat-form-field-invalid.mat-form-field-invalid {
+    .mat-form-field-outline-thick {
+      color: $error-color !important;
+    }
+  }
+
+  &.mat-form-field-disabled {
+    .mat-form-field-label {
+      color: $disabled-color !important;
+    }
+
+    .mat-form-field-outline {
+      color: $disabled-color !important;
+    }
+
+    .mat-input-element:disabled {
+      color: $disabled-color !important;
+    }
+  }
+}
+
+input.mat-input-element {
+  margin-top: -3px !important;
+  margin-bottom: 0px !important;
+}
+
+.mat-form-field-infix {
+  padding: 14px 0 14px 0 !important;
+  border-top: 9px solid transparent !important;
+}
+
+.mat-input-element.mat-form-field-autofill-control {
+  line-height: 1.4;
+}
+
+.mat-form-field.mat-form-field-invalid .mat-form-field-label {
+  color: $error-color !important;
+}
+
+.mat-error {
+  color: $error-color !important;
+}
+
+// Required Field
+
+.required-field.mat-form-field-appearance-outline {
+  .mat-form-field-outline {
+    color: $field-outline-color-mandatory !important;
+  }
+
+  &.mat-focused {
+    .mat-form-field-outline-thick {
+      color: $field-outline-color-mandatory !important;
+    }
+
+    .mat-form-field-required-marker {
+      color: $primary-color;
+    }
+  }
+}
+
+//  Select dropdown
+
+$mat-option-item-height:30px !default;
+$option-height:$mat-option-item-height;
+
+.mat-select {
+  display: inline-block;
+  width: 100%;
+  outline: none;
+  margin: 2px 0 0 0;
+  height: 16px;
+}
+
+.mat-select-trigger {
+  display: inline-table;
+  cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+
+  .mat-select-disabled & {
+    cursor: default;
+  }
+}
+
+.mat-select-value {
+  display: table-cell;
+  max-width: 0;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.mat-select-panel-radius {
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}
+
+
+.mat-select-panel {
+  padding-top: 0;
+  padding-bottom: 0;
+  max-height: $mat-select-panel-max-height;
+  min-width: 70%;
+  border: 1px solid $medium-grey;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  border-bottom-left-radius: 4px !important;
+  border-bottom-right-radius: 4px !important;
+  @include borderRadius(0px, 0px, 4px, 4px);
+  box-shadow: 0 3px 4px 1px rgba(0, 0, 0, 0.2) !important;
+  //border-radius: 4px;
+}
+
+// // Override optgroup and option to scale based on font-size of the trigger.
+.mat-select-panel {
+  margin-top: 28px !important;
+  @extend .mat-select-panel-radius;
+  border: 1px solid $field-outline-color;
+  margin-left: 5px !important;
+  min-width: calc(100% + 19px) !important;
+
+  .mat-optgroup-label,
+  .mat-option {
+    font-size: px-to-rem(14px) !important;
+    line-height: $mat-select-item-height;
+    height: $option-height;
+  }
+}
+
+.mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+  background-color: $aqua !important;
+  color: $dark-grey !important;
+
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: $primay-font-color !important;
+}
+
+.mat-option:hover:not(.mat-option-disabled),
+.mat-option:focus:not(.mat-option-disabled) {
+  background-color: rgba($aqua, 0.7) !important;
+}
+
+.mat-option.mat-active {
+  background-color: rgba($aqua, 0.7) !important;
+}
+
+.mat-select-panel .mat-option {
+  padding: 0 10px 0 10px !important;
+}
+
+.mat-option {
+  height: $option-height !important;
+  font-size: px-to-rem(14px) !important;
+}
+
+.mat-autocomplete-panel {
+  border: 1px solid $field-outline-color;
+  transform: translateY(-1px);
+}
+
+.mat-optgroup-label {
+  height: $mat-option-item-height !important;
+  line-height: 32px !important;
+}
+
+.mat-select-arrow {
+  color: $primary-color !important;
+  border-left: 6px solid transparent !important;
+  border-right: 6px solid transparent !important;
+  border-top: 7px solid !important;
+  margin: 0 2px !important;
+}
+
+// Auto Complete
+
+.mat-autocomplete-panel {
+  border: 1px solid $field-outline-color;
+  transform: translateY(-1px);
+}
+
+.mat-autocomplete-panel:not([class*='mat-elevation-z']) {
+  box-shadow: none;
+  top: -5px;
+  border: 1px solid $medium-grey;
+  box-shadow: 0 3px 4px 1px rgba(0, 0, 0, 0.2) !important;
+}
+
+.mat-autocomplete-panel .mat-option-text {
+  // @include font-size(14px);
+  font-size: px-to-rem(14px);
+  font-weight: inherit;
+}
+
+.mat-autocomplete-panel .mat-option:hover {
+  background-color: $dropdown-option-hover;
+}
+
+.mat-autocomplete-panel .mat-option.mat-selected {
+  background-color: $dropdown-option-selected;
+}
+
+// date Picker
+
+.mat-calendar-previous-button.mat-icon-button,
+.mat-calendar-next-button.mat-icon-button {
+  color: $primary-color !important;
+}
+
+.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
+.cdk-keyboard-focused .mat-calendar-body-active>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
+.cdk-program-focused .mat-calendar-body-active>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected) {
+  background-color: rgba($aqua, .5) !important;
+}
+
+.mat-calendar-body-today:not(.mat-calendar-body-selected) {
+  border-color: $primary-color !important;
+}
+
+.mat-calendar-arrow {
+  border-top-color: $primary-color !important;
+}
+
+.mat-calendar-previous-button.mat-icon-button,
+.mat-calendar-next-button.mat-icon-button {
+  color: $primary-color !important;
+}
+
+.mat-calendar-body-selected {
+  background-color: $primary-color;
+}
+
+.mat-datepicker-toggle .mat-icon-button {
+  color: $primary-color !important;
+}
+
+.mat-datepicker-content .mat-calendar {
+  border: 1px solid $medium-light-grey !important;
+  box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.1) !important;
+}
+
+.without-lable input.mat-input-element {
+  margin-top: -6px !important;
+  margin-bottom: 3px !important;
+}
+
+.date-picker input.mat-input-element {
+  margin-top: 0px !important;
+  margin-bottom: -3px !important;
+}
+
+
+// Large Tab items
+
+tab-label {
+  height: 60px;
+  padding: 0 24px;
+  cursor: pointer;
+  box-sizing: border-box;
+  opacity: 0.6;
+  min-width: 160px;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+
+  &:focus {
+    outline: none;
+
+    &:not(.mat-tab-disabled) {
+      opacity: .3;
+    }
+  }
+
+  &.mat-tab-disabled {
+    cursor: default;
+    color: red;
+  }
+
+  .mat-tab-label-content {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+  }
+}
+
+
+.large {
+  .mat-ink-bar {
+    height: 5px;
+  }
+
+  .mat-tab-label-active {
+    .mat-tab-label-content {
+      font-size: px-to-rem(22px);
+      color: $primay-font-color;
+      font-weight: $medium;
+      opacity: 1;
+    }
+  }
+
+  .mat-tab-label-content {
+    font-size: px-to-rem(22px);
+    color: $primay-font-color;
+    font-weight: $light;
+  }
+
+  .mat-tab-label {
+    opacity: 1;
+    height: 70px;
+  }
+
+  .mat-tab-disabled {
+    opacity: 0.35 !important;
+  }
+}
+
+/* Scroll bars */
+// @include scrollbars(10px, $medium-grey, $white);
+
+// Dialog
+
+/* Modal */
+
+.mat-dialog-container {
+  border-bottom-left-radius: 4px !important;
+  border-bottom-right-radius: 4px !important;
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+  box-shadow: 0 2px 40px 20px rgba(0, 0, 0, 0.1) !important;
+  padding: 20px !important;
+}
+
+.dialog-header {
+  background-color: $primary-color;
+  min-width: 450px;
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  height: 60px;
+  color: $white;
+  margin: -20px -20px 0 -20px;
+  font-weight: $medium;
+
+  .header {
+    align-self: center;
+    font-size: px-to-rem(20px);
+    padding-left: 20px;
+  }
+
+  .close {
+    align-self: center;
+    padding-right: 20px;
+  }
+}
+
+.mat-dialog-content {
+  padding: 0px 0 0 0 !important;
+  margin: 0px !important;
+
+  .content {
+    min-height: 130px;
+    font-size: px-to-rem(14px);
+  }
+}
+
+.mat-dialog-actions {
+
+  margin-bottom: -16px !important;
+}
+
+.footer-inner.mat-dialog-actions {
+  justify-content: flex-end;
+}
+
+// Grid Systems
+
+// .g-row {
+//   display: grid;
+//   grid-template-columns: repeat(12, 1fr);
+//   grid-column-gap: 0px;
+//   grid-row-gap: 0px;
+// }
+
+[class*="col-"] {
+  grid-column: span 12;
+  width: 100%;
+  display: grid;
+  padding: 0;
+}
+
+[class*="row-"] {
+  grid-row: span 12;
+  height: 100%;
+  display: grid;
+  // margin: 0;
+}
+
+.row {
+  margin: 0;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+/* 600px */
+@media only screen and (min-width: 600px) {
+
+  .col-50 {
+    grid-column: span 6;
+  }
+
+  .col-25 {
+    grid-column: span 3;
+  }
+
+  .col-75 {
+    grid-column: span 9;
+  }
+
+  .col-100 {
+    grid-column: span 12;
+  }
+
+  .col-1 {
+    grid-column: span 1
+  }
+
+  .col-2 {
+    grid-column: span 2
+  }
+
+  .col-3 {
+    grid-column: span 3
+  }
+
+  .col-4 {
+    grid-column: span 4
+  }
+
+  .col-5 {
+    grid-column: span 5
+  }
+
+  .col-6 {
+    grid-column: span 6
+  }
+
+  .col-7 {
+    grid-column: span 7
+  }
+
+  .col-8 {
+    grid-column: span 8
+  }
+
+  .col-9 {
+    grid-column: span 9
+  }
+
+  .col-10 {
+    grid-column: span 10
+  }
+
+  .col-11 {
+    grid-column: span 11
+  }
+
+  .col-12 {
+    grid-column: span 12
+  }
+
+  .row-1 {
+    grid-row: span 1;
+  }
+
+  .row-2 {
+    grid-row: span 2;
+  }
+
+  .row-3 {
+    grid-row: span 3;
+  }
+
+  .row-4 {
+    grid-row: span 4;
+  }
+
+  .row-5 {
+    grid-row: span 5;
+  }
+
+  .row-6 {
+    grid-row: span 6;
+  }
+
+  .row-7 {
+    grid-row: span 7;
+  }
+
+  .row-8 {
+    grid-row: span 8;
+  }
+
+  .row-9 {
+    grid-row: span 9;
+  }
+
+  .row-10 {
+    grid-row: span 10;
+  }
+
+  .row-11 {
+    grid-row: span 11;
+  }
+
+  .row-12 {
+    grid-row: span 12;
+  }
+}
+
+/* 600px - 800px */
+
+@media only screen and (max-width: 800px) and (min-width: 600px) {
+
+
+  .col-50 {
+    grid-column: span 6;
+  }
+
+  .col-25 {
+    grid-column: span 3;
+  }
+
+  .col-75 {
+    grid-column: span 9;
+  }
+
+  .col-100 {
+    grid-column: span 12;
+  }
+
+}
+
+//Grid Child item Alignment ( Align-self)
+
+.h-top {
+  align-self: start;
+  width: 100%;
+  height: 100%;
+  display: grid;
+}
+
+.h-center {
+  align-self: center;
+  width: 100%;
+  height: 100%;
+  display: grid;
+}
+
+.h-bottom {
+  align-self: end;
+  width: 100%;
+  height: 100%;
+  display: grid;
+}
+
+.v-left {
+  justify-self: start;
+  width: 100%;
+  height: 100%;
+  display: grid;
+}
+
+.v-middle {
+  justify-self: center;
+  width: 100%;
+  height: 100%;
+  display: grid;
+}
+
+.v-right {
+  justify-self: end;
+  width: 100%;
+  height: 100%;
+  display: grid;
+}
+
+// Menu
+
+.mat-menu-content:not(:empty) {
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+  border: 1px solid $field-outline-color !important;
+  border-radius: 4px !important;
+}
+
+button.mat-menu-item {
+  width: 100%;
+  padding: 5px 10px 5px 10px !important;
+  line-height: 20px !important;
+  height: 30px !important;
+}
+
+.mat-menu-item:hover:not([disabled]) {
+  background-color: rgba($aqua, 1) !important;
+}
+
+/*********************************************************/
+/* BASIC CSS STARTER */
+/*********************************************************/
+
+/* Corrects `block` display not defined in IE 8/9. */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/* Prevents iOS text size adjust after orientation change, without disabling user zoom. */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Removes default margin. */
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Remove text-shadow in selection highlight */
+::-moz-selection {
+  background-color: hsla(0, 0%, 0%, .5);
+  color: #fff;
+  text-shadow: none;
+}
+
+::selection {
+  background-color: hsla(0, 0%, 0%, .5);
+  color: #fff;
+  text-shadow: none;
+}
+
+/* Addresses `outline` inconsistency between Chrome and other browsers. */
+a:focus {
+  outline: thin dotted;
+}
+
+/* Improves readability when focused and also mouse hovered in all browsers. */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* Addresses style set to `bolder` in Firefox 4+, Safari 5, and Chrome. */
+strong {
+  font-weight: bold;
+}
+
+/* Addresses styling not present in IE 8/9. */
+mark {
+  background: #ff6;
+  color: #444;
+}
+
+/* Corrects font family set oddly in Safari 5 and Chrome. */
+code,
+pre {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+/* Improves readability of pre-formatted text in all browsers. */
+pre {
+  white-space: pre;
+}
+
+/* Removes border when inside `a` element in IE 8/9. */
+img {
+  border: 0;
+  max-width: 100%;
+  vertical-align: top;
+}
+
+/* Addresses margin not present in IE 8/9 and Safari 5. */
+figure {
+  margin: 0;
+}
+
+/* 1. Corrects font family not being inherited in all browsers.
+ * 2. Corrects font size not being inherited in all browsers.
+ * 3. Addresses margins set differently in Firefox 4+, Safari 5, and Chrome. */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+
+/* Addresses Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet. */
+button,
+input {
+  line-height: normal;
+}
+
+/* 1. Avoid the WebKit bug in Android 4.0.* where (3) destroys native `audio` and `video` controls.
+ * 2. Improves usability and consistency of cursor style between image-type `input` and others.
+ * 3. Corrects inability to style clickable `input` types in iOS. */
+button,
+html input[type="button"],
+/* 1 */
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  /* 2 */
+  -webkit-appearance: button;
+  /* 3 */
+}
+
+/* 1. Addresses box sizing set to `content-box` in IE 8/9.
+ * 2. Removes excess padding in IE 8/9. */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/* Removes inner padding and border in Firefox 4+. */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* 1. Removes default vertical scrollbar in IE 8/9.
+ * 2. Improves readability and alignment in all browsers. */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/* Remove most spacing between table cells. */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/**********************/
+/* Default Typography */
+/**********************/
+
+html {
+  color: #444;
+  /* Define default color */
+  font-family: sans-serif;
+  /* Define default Font Family */
+  font-size: 16px;
+  /* Define default Font Size */
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+
+
+
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  margin: 0;
+}
+
+h1 {
+  font-size: 3em;
+  /* 48 */
+  line-height: 1;
+  /* 48 / 48 */
+  margin-bottom: .5em;
+  /* 24 / 48 */
+}
+
+h2 {
+  font-size: 2.25em;
+  /* 36 */
+  line-height: 1.333333333;
+  /* 48 / 36 */
+  margin-bottom: 0.666666666em;
+  /* 24 / 36 */
+}
+
+h3 {
+  font-size: 1.5em;
+  /* 24 */
+  line-height: 1;
+  /* 24 / 24 */
+  margin-bottom: 1em;
+  /* 24 / 24 */
+}
+
+h4 {
+  font-size: 1.3125em;
+  /* 21 */
+  line-height: 1.142857142;
+  /* 24 / 21 */
+  margin-bottom: 1.142857142em;
+  /* 24 / 21 */
+}
+
+h5 {
+  font-size: 1.125em;
+  /* 18 */
+  line-height: 1.333333333;
+  /* 24 / 18 */
+  margin-bottom: 1.333333333em;
+  /* 24 / 18 */
+}
+
+h6 {
+  font-size: 1em;
+  /* 16 */
+  line-height: 1.5;
+  /* 24 / 16 */
+  margin-bottom: 1.5em;
+  /* 24 / 16 */
+}
+
+p,
+blockquote {
+  font-size: 1em;
+  /* 16 */
+  margin: 0 0 1.5em;
+  /* 24 / 16 */
+  line-height: 1.5;
+  /* 24 / 16 */
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+p a:link,
+p a:visited {
+  border-bottom: 2px solid #6af;
+  /* Define default color for active */
+  color: #444;
+  /* Define default color for paragraphs */
+  padding-bottom: 1px;
+  text-decoration: none;
+  -webkit-transition: .25s;
+  -moz-transition: .25s;
+  -ms-transition: .25s;
+  -o-transition: .25s;
+  transition: .25s;
+}
+
+p a:hover,
+p a:focus {
+  color: #6af;
+}
+
+p a:active {
+  position: relative;
+  top: 1px;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+dl,
+ol,
+ul {
+  font-size: 1em;
+  /* 16 */
+  margin: 0 0 1.5em;
+  /* 24 / 16 */
+  padding: 0;
+}
+
+dd,
+dt,
+li {
+  line-height: 1.5;
+  /* 24 / 16 */
+  margin: 0;
+}
+
+.height-100 {
+  height: 100%;
+}
+
+.margin-zero {
+  margin: 0;
+}

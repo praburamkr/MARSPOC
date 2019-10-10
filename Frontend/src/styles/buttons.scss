@@ -1,0 +1,53 @@
+.blue-button {
+  border-radius: 18px;
+  background-color: $vca-blue;
+  border: solid 1px $vca-blue;
+  border-style: solid;
+  font-size: 14px;
+  color: $white;
+  padding: 6px 20px;
+  cursor: pointer;
+  overflow: hidden;
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+}
+
+.blue-button:hover {
+  border: solid 1px $vca-light-blue;
+  background-color: $vca-light-blue;
+}
+
+.blue-button:active,
+.blue-button:visited {
+  border: solid 1px $vca-light-blue;
+  background-color: $vca-light-blue;
+}
+
+.secondary-blue-button {
+  border-radius: 18px;
+  background-color: $white;
+  border: solid 1px $vca-blue;
+  border-style: solid;
+  font-size: 14px;
+  color: $vca-blue;
+  padding: 6px 15px;
+  cursor: pointer;
+  overflow: hidden;
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+}
+
+.secondary-blue-button:hover {
+  border: solid 1px $vca-light-blue;
+  background-color: $white;
+  color: $vca-light-blue;
+}
+
+.secondary-blue-button:active,
+.secondary-blue-button:visited {
+  border: solid 1px $vca-light-blue;
+  background-color: $white;
+  color: $vca-light-blue;
+}

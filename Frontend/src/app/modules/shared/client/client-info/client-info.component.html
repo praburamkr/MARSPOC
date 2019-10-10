@@ -1,0 +1,41 @@
+<div class="client-info-container">
+    <div class="client-info-header">
+
+        <div class="client-header">
+            <img class="client-image" src="{{clientInfo['img_url']}}" />
+            <span class="client-name">{{clientInfo['client_name']}}</span>
+            <img class="client-details-arrow" (click)="showClientInformation()"
+                src="../../../../assets/icons/down-arrow.png" />
+        </div>
+
+        <div *ngIf="isExpandCollapse" class="client-information">
+            <div class="client-row">
+                <div class="head-content" i18n="Phone|Phone @@phone">Phone</div>
+                <div class="head-details">{{ clientInfo['phone'] }}</div>
+            </div>
+
+            <div class="client-row">
+                <div class="head-content">Email</div>
+                <div class="head-details">{{ clientInfo['email'] }}</div>
+            </div>
+
+            <div class="client-row">
+                <div class="head-content" i18n="Address|Address @@address">Address</div>
+                <div class="head-details">{{ clientInfo['address'] }}</div>
+            </div>
+
+        </div>
+        <div *ngIf="!isExpandCollapse" class="client-information-collapse"></div>
+    </div>
+</div>
+
+<app-pet-details class=" pet-details" [isBack]="isBack" [isExpandCollapse]="isExpandCollapse" [clientId]="clientId"
+    [pets]="clientPatients" (onAddPet)="close($event)">
+</app-pet-details>
+<!-- <app-add-pet></app-add-pet> -->
+<!-- <div class="footer">
+          <div class="footer-buttons">
+            <button type="button" class="blue-button">Create Appointment</button>
+            <button type="button" class="secondary-blue-button">Book a call with Dr.</button><br>
+          </div>
+        </div> -->

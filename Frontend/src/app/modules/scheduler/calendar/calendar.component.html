@@ -1,0 +1,84 @@
+<div class="container-calendar">
+  <app-filter #filter (onSelectDoctor)="getDoctorApppointments($event)"
+    (onCalendarDateChange)="onCalendarChange($event)" [selectedCurrentCalendarDate]="selectedCurrentCalendarDate"
+    (clearTabs)="clearTabs()" (setClientId)="onClientClick($event)" (onApptTypeValueChange)="onApptTypeChange($event)"
+    (onClientValueChange)="onClientChange($event)" (refreshAppointments)="getAppointments()">
+  </app-filter>
+
+  <div class="day-scroller" onload="loadImage()">
+    <div class="previous" (click)="onPreviousClick($event)">
+      <img src="../../../../assets/icons/arrow-left.png" />
+    </div>
+    <div class="day-container">
+      <div id="sunday" class="days sun" (click)="handleClick('sunday')">Sun</div>
+      <div id="monday" class="days mon" (click)="handleClick('monday')">Mon</div>
+      <div id="tuesday" class="days tue" (click)="handleClick('tuesday')">Tue</div>
+      <div id="wednesday" class="days wed" (click)="handleClick('wednesday')">Wed</div>
+      <div id="thursday" class="days thu" (click)="handleClick('thursday')">Thu</div>
+      <div id="friday" class="days fri" (click)="handleClick('friday')">Fri</div>
+      <div id="saturday" class="days sat" (click)="handleClick('saturday')">Sat</div>
+    </div>
+    <div class="next" (click)="onNextClick($event)">
+      <img src="../../../../assets/icons/arrow-right.png" />
+    </div>
+  </div>
+
+  <div class="control-section">
+
+    <div class="doctor-scroller-previous" (click)="scrollToPreviousDoctor()">
+      <img src="../../../../assets/icons/arrow-left.png" />
+    </div>
+    <div class="doctor-scroller-next" (click)="scrollToNextDoctor()">
+      <img src="../../../../assets/icons/arrow-right.png" />
+    </div>
+    <div class="ng-cloak">
+      <div id="systemTimeZone" class="systemTimeZone"></div>
+      <ejs-schedule width='100%' (dataBound)="onDataBound($event)" #scheduleObj
+        cssClass='schedule-group-custom-work-days' width='100%' [currentView]="currentView" [group]="group"
+        [selectedDate]="selectedDate" (actionBegin)="onActionBegin($event)" (popupOpen)="onPopupOpen($event)"
+        (renderCell)="onRenderCell($event)" [eventSettings]="eventSettings" [allowResizing]="allowResizing"
+        [allowDragAndDrop]="allowDragDrop" (cellDoubleClick)="dbClick($event)">
+
+        <ng-template #resourceHeaderTemplate let-data>
+          <div class='template-wrap'>
+            <div class="resource-image">
+              <img src="{{getDoctorImage(data)}}" />
+            </div>
+            <div class="resource-details">
+              <div class="resource-name">{{getDoctorName(data)}}</div>
+            </div>
+          </div>
+        </ng-template>
+        <e-views>
+          <e-view option="Week"></e-view>
+          <e-view option="Month"></e-view>
+          <e-view option="Day"></e-view>
+        </e-views>
+        <e-resources>
+          <e-resource field='DoctorId' title='Doctor Name' name='Doctors' [dataSource]='resourceDataSource'
+            textField='text' idField='id' colorField='color' workDaysField='workDays' startHourField='startHour'
+            endHourField='endHour'>
+          </e-resource>
+        </e-resources>
+      </ejs-schedule>
+    </div>
+  </div>
+  <div class="zoom-button">
+    <label class="switch">
+      <input type="checkbox" checked (change)="onZooomChange()">
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <!-- <app-phone-call-plugin></app-phone-call-plugin> -->
+  <div *ngIf="($misc | async)?.showSlider">
+    <div class="container-slider-right" id="container-slider-right">
+      <span class="btn-close" (click)="closeSlider($event)">&times;</span>
+      <app-appointment-slider [clientId]="clientId" [clientInfo]="clientInfo"></app-appointment-slider>
+    </div>
+  </div>
+</div>
+<!-- <app-phone-call-plugin class="incoming-call" (onAcceptPhoneCall)="openAppointmentSlider()"></app-phone-call-plugin> -->
+<!-- <app-phone-call-plugin class="incoming-call" (onAcceptPhoneCall)="openAppointmentSlider()"></app-phone-call-plugin> -->
+<app-phone-call-plugin *ngIf="displayPhonePlugin" class="incoming-call" [clientInfo]="clientInfo"
+  (onAcceptPhoneCall)="openAppointmentSlider(clientInfo)">
+</app-phone-call-plugin>

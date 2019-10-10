@@ -1,0 +1,1186 @@
+html {
+  scroll-behavior: smooth;
+}
+
+// [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+//   display: none !important;
+// }
+
+.container-calendar{
+    margin: 54px 0 50px 60px;
+}
+
+.schedule-group-custom-work-days.e-schedule .e-month-view .e-work-days.willsmith,
+.schedule-group-custom-work-days.e-schedule .e-vertical-view .e-work-hours.willsmith {
+    //background-color: #faebd7;
+}
+
+.schedule-group-custom-work-days.e-schedule .e-month-view .e-work-days.alice,
+.schedule-group-custom-work-days.e-schedule .e-vertical-view .e-work-hours.alice {
+    //background-color: #deecfc;
+}
+
+.schedule-group-custom-work-days.e-schedule .e-month-view .e-work-days.robson,
+.schedule-group-custom-work-days.e-schedule .e-vertical-view .e-work-hours.robson {
+    //background-color: #deeeac;
+}
+
+.schedule-group-custom-work-days.e-schedule .e-vertical-view .e-resource-cells {
+    height: 62px;
+}
+
+.schedule-group-custom-work-days.e-schedule .template-wrap {
+    display: flex;
+    text-align: left;
+}
+
+.schedule-group-custom-work-days.e-schedule .template-wrap .resource-image {
+    background-repeat: no-repeat;
+    background-size: 45px;
+    height: 45px;
+    width: 45px;
+    img {
+        border-radius: 50%;
+            border: 1px solid #eee;
+            width: 24px;
+            height: 24px;
+    }
+}
+
+.schedule-group-custom-work-days.e-schedule .template-wrap .resource-details {
+    padding-left: 10px;
+}
+
+.schedule-group-custom-work-days.e-schedule .template-wrap .resource-details .resource-name {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.schedule-group-custom-work-days.e-schedule.e-device .template-wrap .resource-details .resource-name {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.schedule-group-custom-work-days.e-schedule.e-device .e-resource-tree-popup .e-fullrow {
+    height: 50px;
+}
+
+.schedule-group-custom-work-days.e-schedule.e-device .template-wrap .resource-details .resource-designation {
+    display: none;
+}
+
+.e-toolbar-items{
+    background: #fff !important;
+}
+.e-dlg-container,.e-quick-popup-wrapper{
+    display:none !important;
+}
+.container-slider-right{
+    position:fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100vh;
+    background: #F7F7F7;
+    // box-shadow: -6px 0px 6px rgba(0, 0, 0, 0.25);
+    border-left: 1px solid #ccc;
+    z-index:1100;
+    text-align: left;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif !important;
+    overflow-y: auto;
+    .btn-close{
+        position: absolute;
+        right: 25px;
+        top: 5px;
+        color: #fff;
+        font-size: 28px;
+        cursor: pointer;
+        z-index: 101;
+        &:before{
+            position: absolute;
+            content: "";
+            width: 1px;
+            height: 28px;
+            right: 65px;
+            background: #f7f7f7;
+            top: 8px;        
+        }
+    }
+}
+.container-slider-right {
+     .btn-close {
+         position: fixed;
+         top: 3px;
+     }
+}
+.e-schedule .e-schedule-toolbar{
+    box-shadow: none !important;
+}
+.e-schedule-toolbar-container{
+    position: fixed;
+    top:7px;
+    left:64px;
+    z-index: 1025;
+    // width: 500px;
+    box-shadow: none;
+}
+.e-schedule .e-schedule-toolbar .e-toolbar-items.e-tbar-pos {
+}
+.e-toolbar .e-toolbar-items.e-tbar-pos .e-toolbar-right{
+    right:auto;
+    left: 250px;
+    display: none;
+}
+.e-schedule .e-vertical-view .e-time-cells-wrap table td, .e-schedule .e-vertical-view .e-work-cells {
+    height: 36px!important;
+}
+.e-appointment {
+    color: #333!important;
+    
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+    margin-bottom: 2px;
+}
+.e-appointment-details {
+    background: #fff;
+}
+
+ .sick, .fluids, .surgery, .wellness, .recheck, .semi-wellness {
+    position: relative;
+    z-index:1;
+    &:before{
+        position: absolute;
+        content: "";
+        width: 30px;
+        height: 100vh;
+        top: -10px;
+        left: -7px;
+        z-index: -1;
+
+    }
+}
+
+ .sick, .fluids {
+    img {
+        margin-left: 5px;
+    }
+}
+
+.wellness {
+    &:before{
+        background: #56A7F8 !important;
+    }
+}
+
+.semi-wellness {
+    &:before{
+        background: #56A7F8 !important;
+    }
+}
+
+.surgery {
+    &:before{
+        background: #8097A2 !important;
+    }
+}
+
+.fluids {
+    &:before{
+        background: #C59673 !important;
+    }
+}
+
+.sick {
+    &:before{
+        background: #F08B53 !important;
+    }
+}
+
+.recheck {
+    &:before{
+        background: #A86CF3 !important;
+    }
+}
+
+.e-time {
+    display: none;
+}
+
+.e-subject .summary {
+    display: none;
+}
+
+.e-subject:hover .summary {
+    display: block;
+}
+
+.e-appointment-details {
+    margin-left: 30px;
+}
+
+.e-header-row .e-header-cells, .e-header-cells {
+    display: none;
+}
+
+.e-schedule .e-vertical-view .e-resource-cells {
+    padding: 0!important;
+}
+
+.schedule-group-custom-work-days.e-schedule .template-wrap .resource-image {
+    height: 24px !important;
+    width: 24px;
+    // border: 1px solid #eee;
+    background: #eee;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.e-schedule .e-vertical-view .e-date-header-wrap table tbody td {
+    border: 0;
+}
+
+.e-resource-cells {
+    border-bottom: 0!important;
+}
+.e-date-header-container {
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.e-date-header-wrap {
+    border: 0!important;
+}
+
+.schedule-group-custom-work-days.e-schedule .template-wrap .resource-details .resource-name {
+    font-weight: 400!important;
+    margin-top: 3px;
+    font-size: 14px!important;
+}
+.e-schedule .e-vertical-view .e-day-wrapper .e-appointment .e-time {
+    display: none;
+}
+
+.e-schedule .e-vertical-view .e-work-cells {
+    background-color: #f0f0f0;
+    border-color: #E5E5E5!important;
+}
+
+.e-schedule .e-vertical-view .e-day-wrapper .e-appointment .e-subject {
+    font-weight: 400!important;
+    font-size: 10px!important;
+    margin-left: 7px;
+}
+
+.name {
+    font-weight: 550!important;
+}
+
+.pet-name, .type {
+    font-size: 10px!important;
+    float: left;
+    margin-top: 2px;
+}
+
+.pet-details-header {
+    .pet-name {
+        font-size: 12px!important;
+        font-weight: 500;
+        color: #000;
+    }
+}
+
+.btn-edit {
+    font-size: 12px!important;
+    color: #0078F0!important;
+    margin-top: 2px;
+}
+
+.seperator {
+    width: 1px;
+    float: left;
+    margin: 2px 5px;
+    background: #666;
+    height: 10px;
+}
+
+.type {
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 80px;
+}
+
+.e-schedule .e-vertical-view .e-time-cells-wrap table td, .e-schedule .e-vertical-view .e-work-cells {
+    font-size: 10px!important;
+}
+
+.e-schedule .e-vertical-view .e-left-indent {
+    width: 60px!important;
+}
+
+.start-time {
+    position: absolute;
+    right: 30px;
+    top: 5px;
+    font-size: 10px;
+}
+
+.appointment-user {
+     position: absolute;
+    right: 10px;
+    top: 40px;
+    width: 18px;
+    height: 18px;
+    background: #eee;
+    border-radius: 50%;
+    img {
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+    }
+}
+
+.appointment, .appointment-ytc {
+    img {
+        width: 9px !important;
+        height: 7px;
+    }
+}
+
+.appointment-confirm {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: #0078F0;
+    box-shadow: 0 0px 6px rgba(0, 0, 0, 0.85);
+     img {
+        display: none;
+        width: 12px;
+        margin-top: 2px;
+    }
+}
+
+.e-content-wrap, .e-time-cells-wrap {
+    height: calc(100vh - 152px)!important;
+}
+
+.appointment-complete, .appointment, .appointment-ytc {
+    position: absolute;
+    right: 8px;
+    top: 5px;
+    img {
+        width: 12px;
+        margin-top: 2px;
+    }
+}
+
+.e-schedule .e-vertical-view .e-day-wrapper .e-appointment .e-appointment-details {
+    padding: 0!important;
+}
+
+.e-subject {
+    max-height: inherit!important;
+}
+.reasons {
+    width: 100%;
+    float: left;
+    font-size: 10px;
+    margin-top: 5px;
+    color: #666;
+}
+
+.e-toolbar-left {
+    display: none!important;
+}
+
+.reason-description {
+    width: 75%;
+    float: left;
+    color: #a6acb3;
+    font-size: 10px;
+    margin-top: 5px;
+    font-weight: 400!important;
+}
+
+.e-appointment-details {
+    height: 100%;
+}
+
+.icon {
+    position:  absolute;
+    left: 7px;
+    top: 10px;
+}
+
+.e-schedule .e-vertical-view .e-clone-time-indicator, .e-schedule .e-vertical-view .e-current-time {
+    color: #A6ACB3!important;
+    font-weight: 700;
+}
+
+.e-schedule .e-vertical-view .e-current-timeline {
+    border-top: 1px solid #ff0000!important;
+}
+
+.schedule-group-custom-work-days.e-schedule .e-vertical-view .e-resource-cells {
+    height: 36px!important;
+    border: none;
+}
+
+.template-wrap {
+    border-left: 1px solid #ccc;
+    height: 24px;
+}
+
+.e-appointment-details:hover {
+    .carte {
+        display: none;
+    }
+}
+
+.carte {
+    display: none;
+    position :relative;
+    top: -3px;
+    z-index: 2;
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+    background-color: green;
+    width: auto;
+    height: 0%;
+    margin: auto;
+    transition: height 500ms;
+}
+
+.e-appointment-details:hover + .carte {
+    border-top: none;
+    top: 0px;
+    height: 300px;
+}
+
+.carte:hover {
+    height: 300px;
+}
+
+.day-scroller {
+    width: 100%;
+    height: 56px;
+    float: left;
+    background: #F7F7F7;
+    padding-top: 16px;
+}
+.doctor-scroller-next:hover, .doctor-scroller-previous:hover {
+    background: #F7F7F7;
+}
+.doctor-scroller-previous {
+    width: 60px;
+    height: 35px!important;
+    text-align: center;
+    padding: 13px 0;    
+    position: absolute;
+    top: 112px;
+    z-index: 1;
+    cursor: pointer;
+}
+.doctor-scroller-next {
+    width: 60px;
+    height: 35px!important;
+    text-align: center;
+    padding: 13px 0;    
+    position: absolute;
+    top: 112px;
+    z-index: 1;
+    right: 0;
+    height: 38px;
+    background: #fff;
+    cursor: pointer;
+}
+.previous:hover, .next:hover { 
+    background: #fff;
+}
+.previous, .next {
+    width: 60px;
+    height: 40px;
+    text-align: center;
+    padding: 13px 0;
+    cursor: pointer;
+}
+.previous {
+    float: left;
+}
+.next {
+    float: right;
+}
+.days {
+    // width: 150px;
+    width: 12%;
+    float: left;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.days:hover {
+     background: #fff;
+    //  font-weight: 500;
+    border-bottom: 0!important;
+    border-radius: 8px 8px 0px 0px;
+    cursor: pointer;
+}
+
+.current-day, .current-day:hover {
+    background: #fff!important;
+    font-weight: 500;
+    border: 1px solid #E0E0E0;
+    border-bottom: 0!important;
+    border-radius: 8px 8px 0px 0px;
+}
+*:focus{
+    outline: none;
+}
+
+  .hasNotes {
+          .slider.round:before {
+            content: "\e85f"!important;
+            font-family: "e-icons";
+        }
+  }
+
+.zoom-button {
+  position: fixed;
+  bottom: 0;
+
+  .switch {
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: fixed;
+    cursor: pointer;
+    /* top: 0; */
+    left: 66px;
+    right: 0;
+    bottom: 20px;
+    background-color: #ccc;
+    transition: 0.4s;
+    width: 50px;
+    height: 24px;
+    z-index: 1;
+  }
+
+  .slider:before {
+    position: fixed;
+    // content: "<>";
+    content: "\e85b"!important;
+    font-family: "e-icons";
+    height: 24px;
+    width: 24px;
+    left: 0;
+    bottom: 0;
+    background-color: #0078F0;
+    -webkit-transition: .4s;
+    transition: .4s;
+    color: #fff;
+    padding: 1px 0 0 5px;
+    font-size: 15px;
+  }
+
+  input:checked+.slider {
+    background-color: #ccc;
+  }
+
+  input:focus+.slider {
+    // box-shadow: 0 0 1px #2196F3;
+  }
+
+
+  
+
+  input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+    -webkit-transform: rotate(90deg);
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+}
+
+.notes {
+  float: left;
+  display: none;
+}
+
+.hasNotes {
+    .e-schedule .e-vertical-view .e-time-cells-wrap table td, .e-schedule .e-vertical-view .e-work-cells {
+        height: 70px !important;
+    }
+    .e-appointment {
+        height: 70px !important;
+
+        .seperator {
+            display: none!important;
+        }
+
+        .pet-name, .type {
+            width: 100%;
+            float: left;
+        }
+
+    }
+    .notes{
+        display:block;
+    }
+}
+
+.e-appointment-details .tooltiptext {
+  visibility: hidden;
+    // visibility: visible;
+    width: 100%;
+    height: 38px;
+    background: #F2F4F6;
+    border-radius: 0px;
+    padding: 5px 0;
+    margin: 0;
+    left: 0;
+    bottom: 0;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1001;
+    // transition: 0.1s;
+
+    img {
+        padding: 1px 10px;
+    }
+}
+
+.e-appointment-details:hover .tooltiptext {
+  display: flex;
+  justify-content: space-around;
+  visibility: visible;
+  margin: 0;
+}
+
+.e-appointment-details:hover {
+
+  .seperator {
+      display: none!important;
+  }
+  .pet-name, .type {
+      width: 100%;
+      float: left;
+  }
+
+}
+
+.footer-icon {
+    width: auto;
+    float: left;
+    margin-top: 4px;
+
+}
+.e-appointment:hover{
+    height: 150px !important;
+    transition: 0.4s;
+    position: relative;
+    z-index:10;
+
+    &:before {
+        position: absolute;
+        content: "";
+        width: 30px;
+        height: 100vh;
+        top: -10px;
+        left: -7px;
+        z-index: -1;
+    }
+
+    .seperator {
+        display: none!important;
+    }
+
+    .pet-name {
+        width: 100%;
+        float: left;
+    }
+
+}
+
+.e-schedule .e-vertical-view .e-content-wrap, .e-schedule .e-vertical-view .e-time-cells-wrap {
+    overflow-x: hidden!important;
+}
+
+.e-schedule .e-vertical-view .e-date-header-wrap table col, .e-schedule .e-vertical-view .e-content-wrap table col {
+    width: 220px;
+}
+.date-hidden{
+    display: none;
+}
+
+.e-schedule .e-vertical-view .e-work-hours {
+    background-color: #F4FAFF;
+}
+
+.systemTimeZone {
+    width: 60px;
+    position: absolute;
+    top: 148px;
+    z-index: 1;
+    background: #fff;
+    font-size: 9px;
+    color: #808080;
+    text-align: center;
+    border-bottom: 1px solid #C8CCD1;
+    padding: 5px;
+}
+
+/* ScrollBar Colors */
+/*
+ *  STYLE 1
+ */
+
+#style-1::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
+/*
+ *  STYLE 2
+ */
+
+#style-2::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-2::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#style-2::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #D62929;
+}
+
+/*
+ *  STYLE 3
+ */
+
+#style-3::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+#style-3::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+#style-3::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+}
+
+/*
+ *  STYLE 4
+ */
+
+#style-4::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+#style-4::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-4::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+	border: 2px solid #555555;
+}
+
+
+/*
+ *  STYLE 5
+ */
+
+#style-5::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+#style-5::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-5::-webkit-scrollbar-thumb
+{
+	background-color: #0ae;
+	
+	background-image: -webkit-gradient(linear, 0 0, 0 100%,
+	                   color-stop(.5, rgba(255, 255, 255, .2)),
+					   color-stop(.5, transparent), to(transparent));
+}
+
+
+/*
+ *  STYLE 6
+ */
+
+#style-6::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+#style-6::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-6::-webkit-scrollbar-thumb
+{
+	background-color: #F90;	
+	background-image: -webkit-linear-gradient(45deg,
+	                                          rgba(255, 255, 255, .2) 25%,
+											  transparent 25%,
+											  transparent 50%,
+											  rgba(255, 255, 255, .2) 50%,
+											  rgba(255, 255, 255, .2) 75%,
+											  transparent 75%,
+											  transparent)
+}
+
+
+/*
+ *  STYLE 7
+ */
+
+#style-7::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+#style-7::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-7::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0.44, rgb(122,153,217)),
+									   color-stop(0.72, rgb(73,125,189)),
+									   color-stop(0.86, rgb(28,58,148)));
+}
+
+/*
+ *  STYLE 8
+ */
+
+.e-content-wrap::-webkit-scrollbar-track, .container-slider-right::-webkit-scrollbar-track 
+{
+    border: 1px solid #ccc;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 0;
+	background-color: #F5F5F5;
+}
+
+.e-content-wrap::-webkit-scrollbar, .container-slider-right::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.e-content-wrap::-webkit-scrollbar-thumb, .container-slider-right::-webkit-scrollbar-thumb
+{
+	background-color: #59ABFD;	
+}
+
+
+/*
+ *  STYLE 9
+ */
+
+#style-9::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+#style-9::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-9::-webkit-scrollbar-thumb
+{
+	background-color: #F90;	
+	background-image: -webkit-linear-gradient(90deg,
+	                                          rgba(255, 255, 255, .2) 25%,
+											  transparent 25%,
+											  transparent 50%,
+											  rgba(255, 255, 255, .2) 50%,
+											  rgba(255, 255, 255, .2) 75%,
+											  transparent 75%,
+											  transparent)
+}
+
+
+/*
+ *  STYLE 10
+ */
+
+#style-10::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+#style-10::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-10::-webkit-scrollbar-thumb
+{
+	background-color: #AAA;
+	border-radius: 10px;
+	background-image: -webkit-linear-gradient(90deg,
+	                                          rgba(0, 0, 0, .2) 25%,
+											  transparent 25%,
+											  transparent 50%,
+											  rgba(0, 0, 0, .2) 50%,
+											  rgba(0, 0, 0, .2) 75%,
+											  transparent 75%,
+											  transparent)
+}
+
+
+/*
+ *  STYLE 11
+ */
+
+#style-11::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+#style-11::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-11::-webkit-scrollbar-thumb
+{
+	background-color: #3366FF;
+	border-radius: 10px;
+	background-image: -webkit-linear-gradient(0deg,
+	                                          rgba(255, 255, 255, 0.5) 25%,
+											  transparent 25%,
+											  transparent 50%,
+											  rgba(255, 255, 255, 0.5) 50%,
+											  rgba(255, 255, 255, 0.5) 75%,
+											  transparent 75%,
+											  transparent)
+}
+
+/*
+ *  STYLE 12
+ */
+
+#style-12::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
+	border-radius: 10px;
+	background-color: #444444;
+}
+
+#style-12::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#style-12::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #D62929;
+	background-image: -webkit-linear-gradient(90deg,
+											  transparent,
+											  rgba(0, 0, 0, 0.4) 50%,
+											  transparent,
+											  transparent)
+}
+
+/*
+ *  STYLE 13
+ */
+
+#style-13::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
+	border-radius: 10px;
+	background-color: #CCCCCC;
+}
+
+#style-13::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#style-13::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #D62929;
+	background-image: -webkit-linear-gradient(90deg,
+											  transparent,
+											  rgba(0, 0, 0, 0.4) 50%,
+											  transparent,
+											  transparent)
+}
+
+/*
+ *  STYLE 14
+ */
+
+#style-14::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.6);
+	background-color: #CCCCCC;
+}
+
+#style-14::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-14::-webkit-scrollbar-thumb
+{
+	background-color: #FFF;
+	background-image: -webkit-linear-gradient(90deg,
+	                                          rgba(0, 0, 0, 1) 0%,
+											  rgba(0, 0, 0, 1) 25%,
+											  transparent 100%,
+											  rgba(0, 0, 0, 1) 75%,
+											  transparent)
+}
+
+/*
+ *  STYLE 15
+ */
+
+#style-15::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+#style-15::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-15::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #FFF;
+	background-image: -webkit-gradient(linear,
+									   40% 0%,
+									   75% 84%,
+									   from(#4D9C41),
+									   to(#19911D),
+									   color-stop(.6,#54DE5D))
+}
+
+/*
+ *  STYLE 16
+ */
+
+#style-16::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+#style-16::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-16::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #FFF;
+	background-image: -webkit-linear-gradient(top,
+											  #e4f5fc 0%,
+											  #bfe8f9 50%,
+											  #9fd8ef 51%,
+											  #2ab0ed 100%);
+}

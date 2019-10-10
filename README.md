@@ -1,2 +1,1 @@
-# MARSPOC
-MARSPOC Source Code
+# sampleazurefunction

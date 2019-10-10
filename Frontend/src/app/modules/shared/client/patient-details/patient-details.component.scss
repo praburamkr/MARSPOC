@@ -1,0 +1,44 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /*background-color: #333333;*/
+}
+li {
+    float: left;
+    padding-right:2px;
+
+}
+li a {
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    background-color: darkgrey;
+}
+li a:hover {
+    background-color: #111111;
+}
+.patient-tab-details li a {
+    background: none;   
+    padding:5px 0px 5px 0px; 
+    margin-right:20px;
+}
+.patient-tab-details li a:hover {
+    background: none;
+}
+.patient-details-container {
+    padding:15px;
+    background-color: #ffffff;
+}
+.patient-tab-details-container {
+    height:100px;
+    background-color: lightgrey;
+    padding:0px 10px 10px 10px;
+    margin-top:10px;
+}
+.patient-tab-selected {
+    border-bottom:2px solid #000000;
+}

@@ -1,0 +1,238 @@
+﻿<html>
+<head>
+    <meta charset="utf-8" />
+    <title>MARS Voyager</title>
+    <style>
+        body,
+        html {
+            font-family: 'Tahoma';
+            font-size: 14px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .template-container-wrapper {
+            width: 800px;
+            height: 784px;
+            margin: auto;
+            background: #0053CC;
+            padding-top: 10px;
+        }
+
+        .template-container {
+            width: 600px;
+            height: 784px;
+            margin: auto;
+            background: #fff;
+            margin-top: 50px;
+        }
+
+        .icon {
+            width: 43px;
+            height: 43px;
+            margin: auto;
+            border-radius: 50%;
+            margin-top: 50px;
+            margin-bottom: 15px;
+        }
+
+        .powered-by {
+            width: 100%;
+            padding: 5px 0;
+            text-align: right;
+            font-size: 12px;
+            color: #fff;
+            background: #0053CC;
+            float: left;
+        }
+
+        .grid-row {
+            width: calc(100% - 120px);
+            float: left;
+            padding: 0 60px;
+            line-height: 24px;
+        }
+
+        .grid-column {
+            width: 50%;
+            float: left;
+            text-align: left;
+            margin-top: 30px;
+        }
+
+        h1 {
+            width: 100%;
+            float: left;
+            padding: 5px 10px 60px 10px;
+            line-height: 52px;
+            font-size: 40px;
+            margin: 0;
+        }
+
+        .sub-header {
+            width: 100%;
+            float: left;
+            font-size: 12px;
+            margin-bottom: 2px;
+            font-weight: 700;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .pull-left {
+            width: auto;
+            float: left;
+        }
+
+        .pull-right {
+            width: auto;
+            float: right;
+        }
+
+        .header-info {
+            margin: 5px 0 0 5px;
+        }
+
+        .common-row {
+            width: 100%;
+            float: left;
+        }
+
+        .margin-top {
+            margin-top: 10px;
+        }
+
+        .line-height {
+            line-height: 20px !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="template-container-wrapper" style="font-family: Tahoma,Verdana, Arial, Helvetica, Sans-serif;color:#000;">
+        <div class="template-container">
+
+            <div class="powered-by">
+
+                <div class="pull-left">
+
+                    <div class="pull-left">
+                        <img src="https://marspocstorage.blob.core.windows.net/marspoc/common/confirm-appointment-logo.png"
+                            width="83px" height="24px" />
+                    </div>
+
+                    <div class="pull-left header-info">
+                        Animal Hospitals
+                    </div>
+
+                </div>
+
+                <div class="pull-right header-info">Powered by Mars Voyager</div>
+            </div>
+
+            <div class="grid-row">
+
+                <div class="icon">
+                    <img src="https://marspocstorage.blob.core.windows.net/marspoc/common/confirm-appointment-email-success.png"
+                        width="43px" height="43px" />
+                </div>
+
+            </div>
+
+            <div class="grid-row text-center">
+                <h1>Your appointment <br />has been scheduled!</h1>
+            </div>
+
+            <div class="grid-row default-line-height">
+
+                <div class="common-row">
+                    Dear @ClientName,
+                </div>
+
+                <div class="common-row margin-top">
+                    Thanks for scheduling an appointment for @PatientName.
+                    Please arrive a few minutes early to your appointment.
+                </div>
+
+            </div>
+
+            <div class="grid-row">
+
+                <div class="grid-column line-height">
+
+                    <div class="sub-header">
+                        Date and Time
+                    </div>
+
+                    <div class="common-row">
+                        @AppointmentDate
+                    </div>
+
+                    <div class="common-row">@StartTime - @EndTime</div>
+
+                </div>
+
+                <div class="grid-column">
+
+                    <div class="sub-header">
+                        Location</div>
+
+                    <div class="common-row">
+                        VCA West Los Angeles
+                    </div>
+
+                    <div class="common-row">
+                        1900 S Sepulveda Blvd,
+                    </div>
+
+                    <div class="common-row">Los Angeles, CA 90025</div>
+
+                </div>
+            </div>
+
+            <div class="grid-row">
+
+                <div class="grid-column">
+
+                    <div class="sub-header">
+                        Doctor</div>
+
+                    <div class="common-row">
+                         @DoctorName</div>
+
+                </div>
+
+                <div class="grid-column">
+
+                    <div class="sub-header">
+                        Pet</div>
+
+                    <div class="common-row font-bol">
+                        @PatientName</div>
+
+                </div>
+
+            </div>
+
+            <div class="grid-row">
+
+                <div class="grid-column">
+
+                    <div class="sub-header">Notes & Reminders</div>
+
+                    <div class="common-row">
+                        @Notes
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

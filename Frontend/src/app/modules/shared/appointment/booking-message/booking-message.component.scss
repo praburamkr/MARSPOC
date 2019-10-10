@@ -1,0 +1,39 @@
+.booking-message-container{
+    position: fixed;
+    width: 354px;
+    height: 64px;
+    left: 500px;
+    top: 38px;
+    
+    background: #FFFFFF;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+}
+.heightlight{
+    position: fixed;
+    width: 8px;
+    height: 64px;
+    background: #0E9C4F;
+    border-radius: 4px 0px 0px 4px;
+}
+
+.message{
+    // position: absolute;
+    left: 47.22%;
+    right: 40.69%;
+    top: 6.33%;
+    bottom: 91.33%;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #333333;
+}
+.message-container{
+    padding: 15px;
+}

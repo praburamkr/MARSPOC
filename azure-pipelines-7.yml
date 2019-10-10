@@ -1,0 +1,61 @@
+trigger:
+  branches:
+    include: 
+    - develop
+  paths:
+    include: 
+    - MarsPoc/*
+    
+pool:
+  vmImage: 'ubuntu-16.04'
+
+variables:
+  projectName: marspoc
+  registryServerName: '$(registryName).azurecr.io'
+  imageName: '$(projectName)'
+  # define 3 more variables: registryName, registryLogin and registryPassword in the build pipeline in UI
+
+
+steps:
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'MARSacr'
+    repository: 'MARSACR'
+    command: 'buildAndPush'
+    Dockerfile: '**/Notification/Dockerfile'
+
+- task: HelmInstaller@0
+  displayName: 'Install Helm'
+  inputs:
+    helmVersion: '2.14.3'
+    installKubectl: false
+- task: HelmDeploy@0
+  inputs:
+    connectionType: 'Azure Resource Manager'
+    azureSubscription: 'MGM Digital Transformation (11005060) (12652e5d-423a-4d65-9705-b2d088651222)'
+    azureResourceGroup: 'MARSRG'
+    kubernetesCluster: 'marspoc'
+    command: 'init'
+    arguments: '--client-only'
+- task: HelmDeploy@0
+  inputs:
+    azureSubscription: 'MGM Digital Transformation (11005060) (12652e5d-423a-4d65-9705-b2d088651222)'
+    azureResourceGroup: 'MARSRG'
+    kubernetesCluster: 'marspoc'
+    command: 'package'
+    chartPath: 'Backend/MarsPoc/Notification/marspoc/charts/notification'
+    chartVersion: '$(build.buildId)'
+    updateDependency: true
+
+- task: AzureCLI@1
+  inputs:
+    azureSubscription: 'MGM Digital Transformation (11005060) (12652e5d-423a-4d65-9705-b2d088651222)'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'az acr helm push -n marsacr $(Build.ArtifactStagingDirectory)/*.tgz'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'

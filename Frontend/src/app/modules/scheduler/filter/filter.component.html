@@ -1,0 +1,604 @@
+<div class="menuHeader">
+    <div class="align-left margin-right">
+
+        <button class="switch-tab switch-active">
+            <img src="../../../../assets/icons/switch-1.png" />
+        </button>
+        <button class="switch-tab switch-in-active">
+            <img src="../../../../assets/icons/switch-2.png" />
+        </button>
+    </div>
+
+    <div class="control-left">
+
+        <ejs-dropdownlist class="date-type-dropdown-control" [dataSource]='dateType' placeholder='Day'
+            (change)="onDateTypeChange($event)">
+        </ejs-dropdownlist>
+
+        <ejs-datepicker class="date-dropdown-control" [value]="selectedCurrentCalendarDate" [format]="format"
+            (change)="onDateChange($event)">
+        </ejs-datepicker>
+
+        <ejs-dropdownlist class="dropdown-control" [dataSource]='appointmentTypes' placeholder='Medical'
+            [fields]='apptTypeFields' (change)="onApptTypeChange($event)"></ejs-dropdownlist>
+
+        <ejs-multiselect class="multi-dropdown-control" id='multiselectelement' [dataSource]='dropdownList'
+            [fields]='doctorFields' [mode]='mode' placeholder='All Doctors' filterBarPlaceholder='e.g: Dr. doctor name'
+            (select)="onSelect($event)" (removed)="onRemoving($event)" showDropDownIcon="true">
+        </ejs-multiselect>
+
+        <ejs-dropdownlist class="dropdown-control search" id='diacritics' [dataSource]='clientList'
+            [allowFiltering]='true' [ignoreAccent]='true' placeholder='Search client'
+            filterBarPlaceholder='e.g: client name' [fields]='clientFields' (change)="onClientChange($event)">
+        </ejs-dropdownlist>
+
+        <button class="pull-right new-appointment" (click)="onNewAppointmentClick()">+ New Appointment</button>
+    </div>
+</div>
+<div *ngIf="isNewSlider" class="container-slider-right">
+    <div [ngClass]="calculateClasses()">
+        <div class="picture upper" *ngIf="header !== 'New Appointment'">
+            <img id="displayPic" src="{{client?.img_url}}" alt="display picture">
+        </div>
+        <span class="name">{{ header }}</span>
+        <span class="btn-minimize" (click)="minimizeSlider()">
+            <img src="../../../../assets/icons/up-arrow.png" />
+        </span>
+        <span class="btn-maximize hide" (click)="maximizeSlider()">
+            <img src="../../../../assets/icons/down-arrow.png" />
+        </span>
+        <span class="btn-close" (click)="closeSlider()">&times;</span>
+    </div>
+
+    <div class="new-appointment-contents"
+        *ngIf="!isBookAppointmentClicked && !isConfirmAppointmentClicked && !isPatientClicked">
+        <div class=" search-client-header">
+            Search Client
+        </div>
+        <div class="search-box-container">
+
+            <div class="search-input-container">
+                <input #box (keyup)="onKey(box.value)" class="text-input-control" name="client_name"
+                    placeholder="Search by client name" />
+
+
+                <img src="../../../../assets/icons/search.png" class="search-icon" />
+            </div>
+
+            <div class="search-list-container">
+                <div *ngFor="let client of clients">
+                    <div class="search-result-container" *ngIf="clients.length"
+                        (click)=" onClientRowClick(client, true)">
+                        <div class="search-list-row">{{client.client_name}}</div>
+                        <div class="search-list-row">{{client.email}}</div>
+                        <div class="search-list-row" *ngIf="client.patients?.length > 0">
+                            <div class="patient-counter">
+                                {{client.patients.length > 1 ? client.patients.length + ' Patients ' : client.patients.length + ' Patient'}}
+                            </div>
+                            <div class="client-patient" *ngFor="let patient of client.patients">
+                                {{patient.patient_name}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="client-information" *ngIf="isPatientClicked">
+        <div class="client-row">
+            <div class="head-content" i18n="Phone|Phone @@phone">Phone</div>
+            <div class="head-details">{{ client['phone'] }}</div>
+        </div>
+
+        <div class="client-row">
+            <div class="head-content">Email</div>
+            <div class="head-details">{{ client['email'] }}</div>
+        </div>
+
+        <div class="client-row">
+            <div class="head-content" i18n="Address|Address @@address">Address</div>
+            <div class="head-details">{{ client['address'] }}</div>
+        </div>
+
+    </div>
+
+    <div class="patient-container" *ngIf="isPatientClicked">
+
+        <div class="patient-row-container" *ngFor="let pet of client?.patients">
+
+            <div class="patient-details-header">
+                <div class="pet-name">{{pet?.patient_name}}</div>
+                <div class="link-color pull-right">Edit</div>
+            </div>
+
+            <div class="pet-details">
+                <div class="pet-details-left">
+                    <div class="pet-details-row">
+                        <div class="head">
+                            Color
+                        </div>
+                        <div class="details">
+                            <div class="square" [style.background-color]="color"
+                                *ngFor="let color of pet?.color_pattern.split(',')">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pet-details-row">
+                        <div class="head" i18n="Age|Age @@age">
+                            Age
+                        </div>
+                        <div class="details">
+                            {{pet?.age}} Yrs.
+                        </div>
+                    </div>
+
+                    <div class="pet-details-row">
+                        <div class="head" i18n="Weight|Weight @@weight">
+                            Weight
+                        </div>
+                        <div class="details">
+                            {{pet?.weight}} lbs
+                        </div>
+                    </div>
+
+                    <div class="pet-details-row">
+                        <div class="head" i18n="Species|Species @@species">
+                            Species
+                        </div>
+                        <div class="details">
+                            {{pet?.species_name}}
+                        </div>
+                    </div>
+
+                    <div class="pet-details-row">
+                        <div class="head" i18n="Breed|Breed @@breed">
+                            Breed
+                        </div>
+                        <div class="details">
+                            {{pet?.breed}}
+                        </div>
+                    </div>
+
+                    <div class="pet-details-row">
+                        <div class="head" i18n="Sex|Sex @@sex">
+                            Sex
+                        </div>
+                        <div class="details">
+                            {{pet?.sex | titlecase}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pet-image-right">
+
+                    <img [src]="pet?.img_url==null || pet?.img_url==''?'../../../../../assets/images/no-image.jpg' : pet?.img_url"
+                        class="pet-image" />
+
+                </div>
+            </div>
+
+            <div class="patient-actions-buttons">
+
+                <div class="action-button book-an-appointment" (click)="addAppointment(pet, client.patients)"
+                    title="Book Appointment(s)">
+                    <img src="../../../../../assets/icons/icon-appointment.png" alt="" />
+                </div>
+
+                <div class="action-button call-doctor" title="Book a Call with Doctor"><img
+                        src="../../../../../assets/icons/icon-call-plus.png" alt="" />
+                </div>
+                <div class="action-button" title="Favourite"><img src="../../../../../assets/icons/icon-heart-gray.png"
+                        alt="" />
+                </div>
+                <div class="action-button" title="Cart"><img src="../../../../../assets/icons/icon-cart.png" alt="" />
+                </div>
+                <div class="action-button" title="more"><img src="../../../../../assets/icons/icon-menu-list.png"
+                        alt="" />
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="add-pet-container" *ngIf="isAddPatient">
+            <div class="row pet card">
+                <div class="pet-details-header">
+                    <div class="pet-name">New Patient </div>
+                </div>
+                <div class="pet-details">
+
+                    <div class="pet-details-row">
+                        <div class="left">
+                            <div class="head"> Name </div>
+                            <div class="control">
+                                <input #name class="text-input-control" type="text" name="patient_name" ngModel />
+                            </div>
+                        </div>
+
+                        <div class="right">
+                            <div class="head"> Species </div>
+                            <div class="control">
+                                <input #species class="text-input-control" name="species_name" type="text" ngModel />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pet-details-row">
+                        <div class="left">
+                            <div class="head"> Color </div>
+                            <div class="control"> <input #color class="text-input-control" type="text"
+                                    name="color_pattern" ngModel />
+                            </div>
+                        </div>
+
+                        <div class="right">
+                            <div class="head"> Breed </div>
+                            <div class="control"> <input #breed class="text-input-control" name="breed" type="text"
+                                    ngModel />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pet-details-row">
+                        <div class="left">
+                            <div class="head"> Age </div>
+                            <div class="control"> <input #age class="text-input-control helper" type="text" name="age"
+                                    ngModel />
+                                <div class="helper-text">Yrs</div>
+                            </div>
+                        </div>
+
+                        <div class="right">
+                            <div class="head"> Weight </div>
+                            <div class="control"> <input #weight class="text-input-control helper" name="weight"
+                                    type="text" ngModel />
+                                <div class="helper-text">Lbs</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pet-details-row last-row">
+                        <div class="left">
+                            <div class="head"> Sex </div>
+                            <div class="control">
+                                <div class="radio-button-container">
+
+                                    <ul>
+                                        <li>
+                                            <input type="radio" id="1" name="gender" value="Male" ngModel>
+                                            <label for="1">Male</label>
+                                            <div class="check"></div>
+                                        </li>
+
+                                        <li>
+                                            <input type="radio" id="2" name="gender" value="Female" ngModel>
+                                            <label for="2">Female</label>
+                                            <div class="check">
+                                                <div class="inside"></div>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="add-pet-action">
+                        <button class="btn-blue" name="" type="submit"
+                            (click)="addPatient(name, species, color, breed, age, weight)">Save</button>
+                        <button class="btn-secondary" name="" type="button"
+                            (click)="closeNewPatient(name, species, color, breed, age, weight)">Cancel</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div *ngIf="!isAddPatient" class="add-new-patient link-color text-center" (click)="showNewPatient()">
+            + Add New Patient
+        </div>
+    </div>
+
+    <div class="appointment-booking-container" *ngIf="isBookAppointmentClicked">
+
+        <div class="appointment-header-row">
+            <div class="go-back" (click)="onBackClick()">
+                <img src="../../../../assets/icons/back.png" />
+            </div>
+            <div class="header-text text-center">Appointment Booking</div>
+        </div>
+
+        <div>
+            <div class="appointment-patient-row border bg-white">
+                <div class="patient-image">
+                    <img [src]="selectedPatient?.img_url==null || selectedPatient?.img_url==''?'../../../../../assets/images/no-image.jpg' : selectedPatient?.img_url"
+                        class="pet-image" />
+                </div>
+                <div class="patient-name">{{selectedPatient.patient_name}}</div>
+                <div class="appointment-number">1 Appointment</div>
+                <div class="collapse-section">
+                    <img src="../../../../assets/icons/back.png" />
+                </div>
+            </div>
+
+            <div class="appointment-patient-row bg-white">
+                <div class="appointment-type-text text-left">Appointment Type</div>
+                <div class="appointment-type-container">
+                    <div class="radio-button-container">
+
+                        <ul>
+                            <li>
+                                <input type="radio" id="1" name="appointmentType" value="Medical" ngModel
+                                    (change)="onAssessmentTypeChange()">
+                                <label for="1">Medical</label>
+                                <div class="check"></div>
+                            </li>
+
+                            <li>
+                                <input type="radio" id="2" name="appointmentType" value="Grooming" ngModel
+                                    (change)="onAssessmentTypeChange()">
+                                <label for="2">Grooming</label>
+                                <div class="check">
+                                    <div class="inside"></div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <input type="radio" id="3" name="appointmentType" value="Boarding" ngModel
+                                    (change)="onAssessmentTypeChange()">
+                                <label for="3">Boarding</label>
+                                <div class="check">
+                                    <div class="inside"></div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="appointment-patient-row bg-white">
+                <div class="department-control">
+
+                    <div class="selectdiv">
+                        <label>
+                            <select id="department" #department ngModel name="department"
+                                (change)="onDepartmentChange(department)">
+                                <option value="" selected>Select Department</option>
+                                <option value="Dermatology">Dermatology</option>
+                                <option value="Radiology">Radiology</option>
+                                <option value="Cardiology">Cardiology</option>
+                                <option value="Behavior">Behavior</option>
+                                <option value="General Practice">General Practice</option>
+                                <option value="Hospital">Hospital</option>
+                                <option value="Nutrition">Nutrition</option>
+                            </select>
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="appointment-type-control">
+                    <div class="selected-appointment-type-display">
+
+                    </div>
+
+                    <div class="selectdiv">
+                        <label>
+                            <select id="appointmentSubType" #appointmentSubType
+                                (change)="onAppointmentSubTypeChange(appointmentSubType)" ngModel
+                                name="appointmentSubType">
+                                <option value="" selected>Select Appointment Type</option>
+                                <option value="4">Wellness</option>
+                                <option value="5">Sick</option>
+                                <option value="6">Fluids</option>
+                                <option value="7">Surgery</option>
+                                <option value="8">Recheck</option>
+                                <option value="9">Semi annual wellness</option>
+                            </select>
+                        </label>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="appointment-patient-row bg-white padding-top-reset">
+                <div class="reasons-control">
+
+                    <div class="selectdiv">
+                        <label>
+                            <select id="reasons" #reasons ngModel name="reasons" (change)="onReasonsChange()">
+                                <option value="" selected>Enter Reasons</option>
+                                <option value="1">GI upset (Vomiting / Diarrhea)</option>
+                                <option value="2">Tooth extraction</option>
+                                <option value="3">Lethargic Weakness</option>
+                                <option value="4">Eyes Tear Staining</option>
+                                <option value="5">Eating Less</option>
+                                <option value="6">Abdominal Surgery</option>
+                                <option value="7">Fracture Repair</option>
+                            </select>
+                        </label>
+                    </div>
+
+                </div>
+                <div class="reasons-chip-container">
+                    <div id="chip" class="chip"></div>
+                </div>
+            </div>
+
+            <div class="appointment-patient-row bg-white padding-bottom-reset">
+                <div class="timeslot">Timeslot</div>
+                <div class="find-a-time" (click)="suggestTimeSlot()">Find a time</div>
+            </div>
+
+            <div class="appointment-patient-row bg-white padding-top-reset">
+                <div class="timeslot-container" (click)="selectTimeslot()">
+                    <div *ngIf="revVar">
+                        <strong>{{appointmentSuggestedFormattedTimeSlot.name}}</strong>
+                        <br />
+                        {{appointmentSuggestedFormattedTimeSlot.date}}
+                    </div>
+                    <div *ngIf="!revVar">
+                        Click to select a doctor, <br />duration, date and time
+                    </div>
+                </div>
+            </div>
+
+            <div class="appointment-patient-row bg-white padding-top-reset margin-bottom">
+                <textarea id="notes" name="notes" ng-model="notes" class="appointment-notes" rows="3" cols="50"
+                    placeholder="Appointment Notes" ngModel></textarea>
+            </div>
+
+            <div
+                class="appointment-patient-row border bg-white margin-top-add-appointment link-color text-center text-bold">
+                + Add Appointment
+            </div>
+
+        </div>
+
+        <div *ngFor="let otherPatient of otherPatients">
+            <div class="appointment-patient-row border bg-white">
+
+                <div class="patient-image">
+                    <img [src]="otherPatient.img_url" class="pet-image" />
+                </div>
+                <div class="patient-name">{{otherPatient.patient_name}}</div>
+                <div class="expand-section">
+                    <img src="../../../../assets/icons/back.png" />
+                </div>
+                <!-- <div class="appointment-number">1 Appointment</div> -->
+
+            </div>
+            <div
+                class="appointment-patient-row border bg-white margin-top-add-appointment link-color text-center text-bold">
+                + Add Appointment
+            </div>
+        </div>
+
+        <button id="bookAppointment" disabled="true" (click)="onAddAppointmentClick()"
+            class="book-appointment-button-container">
+            Book Appointment
+        </button>
+        <!-- <div class="book-appointment-button-container text-center" (click)="onAddAppointmentClick()">
+            Book 1 Appointment
+        </div> -->
+
+    </div>
+
+    <div class="appointment-booking-container" *ngIf="isConfirmAppointmentClicked">
+
+        <div class="appointment-header-row">
+            <div class="go-back" (click)="onBackClick()">
+                <img src="../../../../assets/icons/back.png" />
+            </div>
+            <div class="header-text text-center">Appointment Booking</div>
+        </div>
+
+        <div class="appointment-patient-row border bg-white">
+            <div class="patient-image">
+                <img [src]="selectedPatient?.img_url==null || selectedPatient?.img_url==''?'../../../../../assets/images/no-image.jpg' : selectedPatient?.img_url"
+                    class="pet-image" />
+            </div>
+            <div class="patient-name">{{selectedPatient.patient_name}}</div>
+            <div class="appointment-number">1 Appointment</div>
+        </div>
+
+        <div class="appointment-patient-row  bg-white">
+
+            <div class="bold-row">Medical Appointment</div>
+
+            <div class="medical-appointment">
+
+                <div class="appointment-image"
+                    [ngStyle]="{'background-color':confirmAppointmentRequestData.appointmentSubTypeColor }">
+
+                    <img src="{{confirmAppointmentRequestData.appointmentSubTypeImageUrl}}" />
+
+                </div>
+
+                <div class="medical-appointment-right">
+                    <div>{{confirmAppointmentRequestData.departmentValue}} -
+                        {{appointmentSuggestedFormattedTimeSlot.duration}} mins</div>
+                    <div>{{confirmAppointmentRequestData.reasonsValue}}</div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="appointment-patient-row bg-white">
+
+            <div class="bold-row">Time Slot</div>
+            <div class="bold-row padding-top-reset padding-bottom-reset">{{appointmentSuggestedFormattedTimeSlot.name}}
+            </div>
+            <div>{{appointmentSuggestedFormattedTimeSlot.date}}</div>
+
+        </div>
+
+        <div class="appointment-patient-row bg-white">
+
+            <div class="bold-row adding-top-reset padding-bottom-reset">Notes</div>
+            <div>{{confirmAppointmentRequestData.notes}}</div>
+
+        </div>
+
+        <div class="appointment-patient-row bg-white margin-email-setter padding-bottom-reset">
+            <div class="common-row border-top-2">
+                <label class="switch pull-left">
+                    <input id="isEmail" type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label>
+                <div id="sendConfirmationEmail" class="email-confirmation-email">Send confirmation email</div>
+            </div>
+        </div>
+
+        <div class="appointment-patient-row bg-white padding-top-reset">
+
+            <div class="bold-row padding-bottom-reset">Send email to</div>
+            <div class="client-email-address-container">
+                {{client.email}}
+            </div>
+
+            <div class="bold-row padding-bottom-reset">Copy email to</div>
+            <input id="email" class=" email-input-control" name="appointment_email" />
+            <div>
+
+            </div>
+
+        </div>
+
+        <button (click)="onConfirmAppointmentClick()" class="confirm-appointment-button-container">
+            Confirm 1 Appointment
+        </button>
+
+    </div>
+</div>
+
+<div class="confirmed-window-bg" *ngIf="isConfirmed">
+
+</div>
+<div class="confirmed-window" *ngIf="isConfirmed">
+    <div class="confirmed-icon">
+        <img src="https://marspocstorage.blob.core.windows.net/marspoc/common/confirm-appointment-email-success.png" />
+    </div>
+    <div class="confirmed-text">
+        1 Appointment(s) Booked
+    </div>
+    <div class="confirm-popup-button-container">
+        <button (click)="onConfirmationClose()">
+            Done
+        </button>
+    </div>
+</div>
